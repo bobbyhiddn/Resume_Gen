@@ -2,34 +2,61 @@
 
 # Professional Summary
 
-Senior DevOps Engineer / Manager who transforms ambiguous requirements into secure, automated cloud platforms and high-performing teams. Combines deep IaC expertise with servant-leadership to modernize legacy estates, tighten security, and deliver value on aggressive schedules. Proven record of elevating DevOps maturity, mentoring engineers, and driving continuous-delivery culture for mission-critical programs. Brings additional value through professional multimedia production skills, including executive demos and stakeholder-facing technical media.
+Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the belief that well-designed infrastructure is both elegant and useful. I build secure, automated cloud platforms and high-functioning teams by treating complexity as a structure to be understood, not avoided. My approach blends Infrastructure as Code (IaC) with a cumulative body of practical knowledge, cultivated across years of architecting, automating, and scaling systems under real-world constraints. I lead by solving root problems, tightening feedback loops, and mentoring engineers toward operational clarity. Beyond infrastructure, I bring professional-grade multimedia skills to craft clear, compelling technical communications—from stakeholder briefings to internal training demos. I consider myself a passionate systems engineer with soft skills.
 
 # Core Competencies
 
-- **IaC / CaC** Terraform, Ansible, AWS SSM, CloudFormation
-    
-- **CI/CD** GitLab Runners, Argo CD, Github Actions
-    
-- **Containers** Docker, Kubernetes, Iron Bank
-    
-- **Languages** Python, Go, JavaScript, PowerShell, Bash
-    
-- **Cloud Platforms** AWS, Linode, Azure, GCP
-    
-- **Local Virtualization** VMware Horizon & VxRail, KVM
-    
-- **Artifact Repos** Nexus, S3
-    
-- **Security & Compliance** STIG automation, least-privilege networking
-    
-- **Domain Administration** Active Directory, Group Policy, realm, DNS, Kerberos, LDAP integration
-    
-- **Leadership** Road-mapping, sprint and quarterly planning, mentoring, cross-team coordination
-    
-- **Process & Tools** Agile/Scrum, Jira, Confluence, ServiceNow, technical documentation
-    
-- **Multimedia & Demo Production** Video scripting, filming, editing, and presentation for technical audiences; stakeholder communications; internal training materials
-    
+- **IaC / CaC**
+  - Terraform
+  - Ansible
+  - AWS SSM
+  - CloudFormation
+  - GitLab Runners
+  - Argo CD
+  - Github Actions
+
+- **Container Orchestration**
+  - Docker Compose
+  - Kubernetes
+
+- **Languages**
+  - Python
+  - Go
+  - JavaScript
+  - PowerShell
+  - Bash
+
+- **Virtualization**
+  - AWS
+  - Azure
+  - GCP
+  - VMware Horizon & VxRail
+  - KVM
+
+- **Artifact Repos**
+  - Nexus
+  - S3
+
+- **Security & Compliance**
+  - STIG automation
+  - Least-privilege networking
+
+- **Domain Administration**
+  - Active Directory & Group Policy
+  - Realm
+  - LDAP Integration
+
+- **Process & Tools**
+  - Road-mapping
+  - Sprint and quarterly planning
+  - Mentoring
+  - Cross-team coordination
+  - SAFe/Agile/Scrum
+  - Jira & Confluence
+  - Technical Documentation
+  - Video Scripting, Filming, Editing
+  - Presentation & Demo Production for Technical Audiences
+  - In Depth Technical Documentation
 
 # Professional Experience
 
@@ -67,10 +94,12 @@ Senior DevOps Engineer / Manager who transforms ambiguous requirements into secu
 
 **Northrop Grumman** – Roy, UT _(Feb 2022 – Oct 2022)_
 
-- Guided deployments of VMWare virtualization and analytics suites under aggressive deadlines.
-    
-- Produced transition packages and SOPs to accelerate hand-off to operations teams.
-    
+- Saved the program large consulting costs by taking on large projects and documenting the deployment process, which I turned over successfully numerous times
+
+-   Contributed in large part to the development, implementation, and turn to production of multiple program-critical projects: 
+    - IBM Jazz – The IBM web-based suite of Quality Management, Risk Management, Contribution Management, and Requirement Management software
+    - VMware Horizon 8 – Developed and implemented the stand-up of the program’s virtual desktop infrastructure
+    - VMware VxRail Datacenter Standup 
 
 ## Computer Systems Analyst
 

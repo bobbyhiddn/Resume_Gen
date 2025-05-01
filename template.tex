@@ -2,12 +2,40 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{parskip}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{hyperref}
 
 % Define a command for tightlist since pandoc uses it
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+% Define column environment for core competencies
+\newenvironment{competencycolumns}{
+  \begin{multicols}{2}
+  \setlength{\columnsep}{1cm}
+  \setlength{\columnseprule}{0pt}
+}{\end{multicols}}
+
+% Custom styles for resume sections
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+% Custom command for core competencies section with proper bullet formatting
+\newcommand{\corecompetencies}[1]{
+  \section*{Core Competencies}
+  \begin{multicols}{2}
+  \small
+  \begin{itemize}[leftmargin=1em,itemsep=0.3em,parsep=0.15em]
+    #1
+  \end{itemize}
+  \normalsize
+  \end{multicols}
+}
+
 \begin{document}
 
+% Header with portrait and contact info
 \begin{minipage}{0.25\textwidth}
   \includegraphics[width=\linewidth]{Portrait.jpg}
 \end{minipage}%
