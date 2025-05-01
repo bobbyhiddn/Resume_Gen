@@ -2,7 +2,7 @@
 
 # Professional Summary
 
-Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the belief that well-designed infrastructure is both elegant and useful. I build secure, automated cloud platforms and high-functioning teams by treating complexity as a structure to be understood, not avoided. I pra Infrastructure as Code (IaC) with a cumulative body of practical knowledge, cultivated across years of architecting, automating, and scaling systems under real-world constraints. I lead by solving root problems, tightening feedback loops, and mentoring engineers toward operational clarity. Beyond infrastructure, I bring professional-grade multimedia skills to craft clear, compelling technical communications—from stakeholder briefings to internal training demos. I consider myself a passionate systems engineer with soft skills.
+Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the belief that well-designed infrastructure is both elegant and useful. I build secure, automated cloud platforms and high-functioning teams by treating complexity as a structure to be understood, not avoided. I practice DevOps as a passion with a cumulative body of practical knowledge, cultivated across years of architecting, automating, and scaling systems under real-world constraints and deadlines. I lead by solving root problems, tightening feedback loops, and mentoring engineers toward operational clarity. Beyond infrastructure, I bring professional-grade multimedia skills to craft clear, compelling technical communications—from stakeholder briefings to internal training demos. I consider myself a systems engineer with soft skills.
 
 # Core Competencies
 
