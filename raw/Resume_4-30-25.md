@@ -134,7 +134,7 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
 
 - Top-Secret Security Clearance (Active)
     
-- Security+ – CompTIA (2019 – 2025)
+- Security+ – CompTIA (2019 – 2029)
     
 - ITIL v4 Foundations – AXELOS (2019)
     
@@ -151,4 +151,4 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
 Available upon request.
 
 
-[Repo that generated this resume](https://github.com/bobbyhiddn/Resume_Gen.git)
+[Repo that generated this resume.](https://github.com/bobbyhiddn/Resume_Gen.git)

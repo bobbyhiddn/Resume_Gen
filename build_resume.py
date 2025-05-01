@@ -191,6 +191,13 @@ $body$
         import shutil
         shutil.copy(portrait_file, target_path)
     
+    # Replace en spaces (U+2002) with regular spaces to avoid warnings
+    if temp_md_file.exists():
+        content = temp_md_file.read_text(encoding='utf-8')
+        # Replace en space (U+2002) with regular space
+        content = content.replace('\u2002', ' ')
+        temp_md_file.write_text(content, encoding='utf-8')
+    
     # Generate PDF
     output_file = Path("pdf/resume.pdf")
     pypandoc.convert_file(
@@ -199,7 +206,8 @@ $body$
         outputfile=str(output_file),
         extra_args=[
             "--pdf-engine=xelatex",
-            f"--template={template_path}"
+            f"--template={template_path}",
+            "--quiet"  # Suppress MiKTeX update warnings
         ]
     )
     
@@ -207,9 +215,9 @@ $body$
     if temp_md_file.exists():
         temp_md_file.unlink()
     
-    # Clean up portrait file
-    if portrait_file.exists():
-        portrait_file.unlink()
+    # Clean up temporary portrait file in current directory
+    if Path(portrait_file.name).exists():
+        Path(portrait_file.name).unlink()
     
     print(f"✅ Resume generated: {output_file.resolve()}")
 
