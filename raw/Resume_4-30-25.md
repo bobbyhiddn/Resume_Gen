@@ -26,17 +26,6 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
   - PowerShell
   - Bash
 
-- **Virtualization**
-  - AWS
-  - Azure
-  - GCP
-  - VMware Horizon & VxRail
-  - KVM
-
-- **Artifact Repos**
-  - Nexus
-  - S3
-
 - **Security & Compliance**
   - STIG automation
   - Least-privilege networking
@@ -45,6 +34,13 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
   - Active Directory & Group Policy
   - Realm
   - LDAP Integration
+
+- **Virtualization**
+  - AWS
+  - Azure
+  - GCP
+  - VMware Horizon & VxRail
+  - KVM
 
 - **Process & Tools**
   - Road-mapping
