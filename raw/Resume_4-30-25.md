@@ -71,7 +71,7 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
     
 - Streamlined Terraform + Ansible pipelines, cutting deploy times while improving auditability and rollback.
     
-- Drove emergent AI utilization through pipelines, terminals, and home-grown tooling through both local and cloud-hosted models.
+- Drove emergent AI utilization in pipelines, terminals, and home-grown tooling through both local and cloud-hosted models.
     
 - Produced executive-level demonstrations and technical walkthroughs using professional-grade video editing and scripting.
     
