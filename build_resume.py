@@ -207,7 +207,9 @@ $body$
     if temp_md_file.exists():
         temp_md_file.unlink()
     
-
+    # Clean up portrait file
+    if portrait_file.exists():
+        portrait_file.unlink()
     
     print(f"✅ Resume generated: {output_file.resolve()}")
 
