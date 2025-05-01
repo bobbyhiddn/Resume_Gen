@@ -192,7 +192,7 @@ $body$
         shutil.copy(portrait_file, target_path)
     
     # Generate PDF
-    output_file = Path("resume.pdf")
+    output_file = Path("pdf/resume.pdf")
     pypandoc.convert_file(
         str(temp_md_file),
         to="pdf",
