@@ -53,7 +53,6 @@ Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the 
   - Technical Documentation
   - Video Scripting, Filming, Editing
   - Presentation & Demo Production for Technical Audiences
-  - In Depth Technical Documentation
 
 # Professional Experience
 
