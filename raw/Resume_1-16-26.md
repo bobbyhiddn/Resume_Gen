@@ -38,7 +38,7 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
   - AWS GovCloud (Unclassified & Top Secret)
   - Azure, GCP, VMware Horizon & VxRail, KVM
 
-- **System & Vision**
+- **Systems & Vision**
   - Multi-team program management (10+ teams)
   - Sprint planning, velocity tracking, backlog grooming
   - Mentoring, performance coaching, stakeholder reporting
