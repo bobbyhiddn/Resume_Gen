@@ -133,8 +133,11 @@ def build_resume(md_path, portrait_path):
 \\usepackage{{enumitem}}
 \\usepackage{{hyperref}}
 
-% Define a command for tightlist since pandoc uses it
-\\providecommand{{\\tightlist}}{{\\setlength{{\\itemsep}}{{0pt}}\\setlength{{\\parskip}}{{0pt}}}}
+% Set default list spacing for all itemize environments
+\\setlist[itemize]{{itemsep=0.3em,parsep=0.15em,topsep=0.3em}}
+
+% Define a command for tightlist since pandoc uses it - allow some spacing for readability
+\\providecommand{{\\tightlist}}{{\\setlength{{\\itemsep}}{{0.4em}}\\setlength{{\\parskip}}{{0.2em}}}}
 
 % Define column environment for core competencies
 \\newenvironment{{competencycolumns}}{{
