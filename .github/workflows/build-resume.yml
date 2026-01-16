@@ -1,0 +1,189 @@
+name: Build Resume and Deploy
+
+on:
+  push:
+    paths:
+      - 'raw/*.md'
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-fonts-extra
+
+      - name: Install Python dependencies
+        run: |
+          pip install pypandoc
+
+      - name: Find latest resume markdown
+        id: find-resume
+        run: |
+          LATEST_MD=$(ls -t raw/*.md | head -1)
+          echo "resume_file=$LATEST_MD" >> $GITHUB_OUTPUT
+          echo "Found resume: $LATEST_MD"
+
+      - name: Build resume PDF
+        run: |
+          python build_resume.py "${{ steps.find-resume.outputs.resume_file }}" raw/Portrait.jpg
+
+      - name: Rename PDF with date
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          cp pdf/resume.pdf "pdf/Micah_Longmire-${DATE}.pdf"
+
+      - name: Update docs folder for GitHub Pages
+        run: |
+          mkdir -p docs
+          cp pdf/resume.pdf docs/
+          LATEST_PDF=$(ls -t pdf/Micah_Longmire-*.pdf 2>/dev/null | head -1 || echo "")
+          if [ -n "$LATEST_PDF" ]; then
+            cp "$LATEST_PDF" docs/
+          fi
+
+      - name: Create index.html for GitHub Pages
+        run: |
+          cat > docs/index.html << 'HTMLEOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Micah Longmire - Resume</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body {
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+                      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                      min-height: 100vh;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      padding: 2rem;
+                      color: #e0e0e0;
+                  }
+                  .container {
+                      max-width: 900px;
+                      width: 100%;
+                  }
+                  header {
+                      text-align: center;
+                      margin-bottom: 2rem;
+                  }
+                  h1 {
+                      font-size: 2.5rem;
+                      color: #fff;
+                      margin-bottom: 0.5rem;
+                  }
+                  .subtitle {
+                      color: #64b5f6;
+                      font-size: 1.1rem;
+                  }
+                  .pdf-container {
+                      background: #fff;
+                      border-radius: 12px;
+                      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+                      overflow: hidden;
+                      margin-bottom: 2rem;
+                  }
+                  .pdf-viewer {
+                      width: 100%;
+                      height: 80vh;
+                      border: none;
+                  }
+                  .download-section {
+                      text-align: center;
+                  }
+                  .download-btn {
+                      display: inline-block;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      color: white;
+                      padding: 1rem 2rem;
+                      border-radius: 8px;
+                      text-decoration: none;
+                      font-weight: 600;
+                      transition: transform 0.2s, box-shadow 0.2s;
+                  }
+                  .download-btn:hover {
+                      transform: translateY(-2px);
+                      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+                  }
+                  .links {
+                      margin-top: 2rem;
+                      display: flex;
+                      gap: 2rem;
+                      justify-content: center;
+                      flex-wrap: wrap;
+                  }
+                  .links a {
+                      color: #64b5f6;
+                      text-decoration: none;
+                      transition: color 0.2s;
+                  }
+                  .links a:hover {
+                      color: #90caf9;
+                  }
+                  footer {
+                      margin-top: auto;
+                      padding-top: 2rem;
+                      color: #666;
+                      font-size: 0.9rem;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <header>
+                      <h1>Micah Longmire</h1>
+                      <p class="subtitle">Program Technical Lead / AI & Automation Product Manager</p>
+                  </header>
+
+                  <div class="pdf-container">
+                      <iframe class="pdf-viewer" src="resume.pdf" type="application/pdf">
+                          <p>Your browser does not support PDFs.
+                          <a href="resume.pdf">Download the PDF</a>.</p>
+                      </iframe>
+                  </div>
+
+                  <div class="download-section">
+                      <a href="resume.pdf" download class="download-btn">Download Resume (PDF)</a>
+                  </div>
+
+                  <div class="links">
+                      <a href="mailto:mlmicahlongmire@gmail.com">mlmicahlongmire@gmail.com</a>
+                      <a href="https://github.com/bobbyhiddn" target="_blank">GitHub</a>
+                      <a href="https://linkedin.com/in/micah-longmire" target="_blank">LinkedIn</a>
+                  </div>
+              </div>
+
+              <footer>
+                  Auto-generated from <a href="https://github.com/bobbyhiddn/Resume_Gen">Resume_Gen</a>
+              </footer>
+          </body>
+          </html>
+          HTMLEOF
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add pdf/*.pdf docs/
+          git diff --staged --quiet || git commit -m "Auto-generate resume PDF and update GitHub Pages"
+          git push

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micah Longmire - Resume</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+        .subtitle {
+            color: #64b5f6;
+            font-size: 1.1rem;
+        }
+        .pdf-container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        .pdf-viewer {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+        .download-section {
+            text-align: center;
+        }
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .links a {
+            color: #64b5f6;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .links a:hover {
+            color: #90caf9;
+        }
+        footer {
+            margin-top: auto;
+            padding-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #64b5f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Micah Longmire</h1>
+            <p class="subtitle">Program Technical Lead / AI & Automation Product Manager</p>
+        </header>
+
+        <div class="pdf-container">
+            <iframe class="pdf-viewer" src="resume.pdf" type="application/pdf">
+                <p>Your browser does not support PDFs.
+                <a href="resume.pdf">Download the PDF</a>.</p>
+            </iframe>
+        </div>
+
+        <div class="download-section">
+            <a href="resume.pdf" download class="download-btn">Download Resume (PDF)</a>
+        </div>
+
+        <div class="links">
+            <a href="mailto:mlmicahlongmire@gmail.com">mlmicahlongmire@gmail.com</a>
+            <a href="https://github.com/bobbyhiddn" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/micah-longmire" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <footer>
+        Auto-generated from <a href="https://github.com/bobbyhiddn/Resume_Gen">Resume_Gen</a>
+    </footer>
+</body>
+</html>
