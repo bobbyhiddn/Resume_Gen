@@ -15,6 +15,7 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 - **Container Orchestration**
   - Kubernetes (EKS, multi-tenant)
   - Docker Compose, Helm
+  - Podman
 
 - **Languages**
   - Python, Go, JavaScript
