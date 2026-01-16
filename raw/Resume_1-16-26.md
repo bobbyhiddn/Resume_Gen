@@ -116,12 +116,6 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 - Produced multimedia content for nationwide distribution; interviewed senior military and state leadership
 - Led video production from scripting to editing for public affairs, training, and executive communication
 
-## IT Service Technician
-
-**Peak Solutions** – Brandon, MS _(2014 – 2018)_
-
-- Performed on-site repairs, patching, and end-user training for small-business clients
-
 # Certifications
 
 - Top-Secret Security Clearance (Active)

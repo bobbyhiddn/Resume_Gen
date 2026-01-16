@@ -150,6 +150,8 @@ def build_resume(md_path, portrait_path):
 \\usepackage{{titlesec}}
 \\titleformat{{\\section}}{{\\Large\\bfseries}}{{}}{{0em}}{{}}
 \\titlespacing{{\\section}}{{0pt}}{{10pt}}{{5pt}}
+\\titleformat{{\\subsection}}{{\\large\\bfseries}}{{}}{{0em}}{{}}
+\\titlespacing{{\\subsection}}{{0pt}}{{8pt}}{{4pt}}
 
 % Custom command for core competencies section with proper bullet formatting
 \\newcommand{{\\corecompetencies}}[1]{{
