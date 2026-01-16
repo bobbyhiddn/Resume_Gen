@@ -12,9 +12,30 @@ def build_resume(md_path, portrait_path):
         raise FileNotFoundError(f"Markdown file not found: {md_path}")
     if not portrait_file.exists():
         raise FileNotFoundError(f"Portrait image not found: {portrait_path}")
-        
+
     # Read the markdown content
     md_content = md_file.read_text(encoding='utf-8')
+
+    # Extract metadata from pandoc-style header (% lines at top)
+    import re
+    metadata_pattern = r'^% (.+)\n% (.+)\n% (.+)'
+    metadata_match = re.match(metadata_pattern, md_content)
+
+    if metadata_match:
+        author_name = metadata_match.group(1).strip()
+        # Parse title line: "Title • Location | email | github | linkedin"
+        title_line = metadata_match.group(2).strip()
+        # Extract just the title (before the bullet point or location)
+        if '•' in title_line:
+            title = title_line.split('•')[0].strip()
+            contact_info = title_line.split('•')[1].strip()
+        else:
+            title = title_line
+            contact_info = "Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire"
+    else:
+        author_name = "Micah Longmire"
+        title = "Program Technical Lead / AI & Automation Product Manager"
+        contact_info = "Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire"
     
     # Create a temporary markdown file with modified content for better PDF generation
     temp_md_file = Path("temp_resume.md")
@@ -147,9 +168,9 @@ def build_resume(md_path, portrait_path):
 \\end{{minipage}}%
 \\hfill
 \\begin{{minipage}}{{0.7\\textwidth}}
-  \\Large \\textbf{{Micah Longmire}} \\\\
-  \\normalsize Senior DevOps Engineer / Manager \\\\
-  Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
+  \\Large \\textbf{{{author_name}}} \\\\
+  \\normalsize {title} \\\\
+  {contact_info}
 \\end{{minipage}}
 
 \\vspace{{1em}}
