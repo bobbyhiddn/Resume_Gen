@@ -9,7 +9,8 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 # Core Competencies
 
 - **IaC / CaC**
-  - Terraform, Ansible, AWS SSM, CloudFormation
+  - Terraform, Ansible
+  - AWS SSM, CloudFormation
   - GitLab Runners, Argo CD, GitHub Actions
 
 - **Container Orchestration**
