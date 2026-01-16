@@ -24,6 +24,8 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
   - AWS Bedrock (Claude, Titan)
   - RAG architectures
   - Model Context Protocol (MCP) integration
+  - Agentic Orchestration Systems
+  - Embedding-Based Classification
 
 - **Security & Compliance**
   - STIG automation, vulnerability remediation pipelines
