@@ -79,11 +79,13 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 **Accenture Federal Services** – Roy, UT _(Feb 2023 – Jun 2025)_
 
 **Major Delivery:**
+
 - Led architecture and delivery of an Air Force program—compressing a 6-month scope into 9 weeks through program leadership
 - Deployed operational cloud environments across Unclassified and Top Secret GovCloud: 10 AWS accounts, Transit Gateway routing, VPCs, domain controllers, certificate authorities, JWICS Workspace access
 - Platform services included: GitLab, Keycloak, Vault, Jira, Confluence, Splunk, Nessus
 
 **Enterprise IaC:**
+
 - Built enterprise IaC framework adopted across multiple product and operations teams; reduced infrastructure deployment time from weeks to hours
 - Automated OS upgrades and hardening across multi-environment fleet, eliminating weeks of manual effort and raising compliance scores
 
