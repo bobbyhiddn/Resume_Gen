@@ -54,6 +54,7 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 **Accenture Federal Services** – Roy, UT _(Jun 2025 – Present)_
 
 **Leadership Scale:**
+
 - Managing 10 DevOps teams across infrastructure, platform, and security functions within primary program
 - Serving as technical lead for secondary program driving AI platform architecture
 - Launching 2 additional programs in Q1 2026
@@ -62,11 +63,13 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 - Instrumental in DoW demonstrations for Pentagon and Air Force stakeholders
 
 **AI Platform Innovation:**
+
 - Core contributor to FedGenius, AFS's cloud-agnostic RAG and chat platform operational in classified environments
 - Deployed AI automation in CI/CD pipelines via secure Bedrock endpoints—a capability most vendors cannot provide in classified networks
 - Enabled strategic partnership with Istari Digital for Model Context Protocol integration, enabling AI-to-engineering-model connectivity
 
 **Cost & Process Optimization:**
+
 - Achieved $285K quarterly savings through systematic idle resource management
 - Built support SLA framework protecting engineering capacity from unstructured interrupts
 - Roadmap positions organization for $1M annual savings by end of FY26
@@ -121,7 +124,7 @@ Program Technical Lead and AI & Automation Product Manager leading multi-team pr
 
 # Certifications
 
-- Top-Secret Security Clearance (Active)
+- Top-Secret Security Clearance - SCI (Active)
 - Security+ – CompTIA (2019 – 2029)
 - ITIL v4 Foundations – AXELOS (2019)
 
