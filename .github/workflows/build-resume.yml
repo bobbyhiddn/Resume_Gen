@@ -60,7 +60,9 @@ jobs:
 
       - name: Create index.html for GitHub Pages
         run: |
-          cat > docs/index.html << 'HTMLEOF'
+          DATE=$(date +%Y-%m-%d)
+          DOWNLOAD_FILENAME="Micah_Longmire_resume_${DATE}.pdf"
+          cat > docs/index.html << HTMLEOF
           <!DOCTYPE html>
           <html lang="en">
           <head>
@@ -163,7 +165,7 @@ jobs:
                   </div>
 
                   <div class="download-section">
-                      <a href="resume.pdf" download class="download-btn">Download Resume (PDF)</a>
+                      <a href="resume.pdf" download="${DOWNLOAD_FILENAME}" class="download-btn">Download Resume (PDF)</a>
                   </div>
 
                   <div class="links">
