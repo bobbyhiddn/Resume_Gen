@@ -1,10 +1,10 @@
 % Micah Longmire
-% AI Lead & Agent Systems Architect • Chattanooga, TN | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
+% Classified AI Lead for the Mission Systems Sector • Chattanooga, TN | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
 % Updated: 2026-11-06
 
 # Professional Summary
 
-AI lead and agent systems architect. I set AI strategy for a federal sector and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is agentic engineering at production scale, paired with cloud architecture and rapid automation of infrastructure and configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, 72 tracked initiatives, and capture strategy work on sole-source awards totaling more than $100M.
+Classified AI Lead for the Mission Systems sector and agent systems architect. I set the sector's AI strategy and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is agentic engineering at production scale, paired with cloud architecture and rapid automation of infrastructure and configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, 72 tracked initiatives, and capture strategy work on sole-source awards totaling more than $100M.
 
 # Core Competencies
 
@@ -54,13 +54,13 @@ AI lead and agent systems architect. I set AI strategy for a federal sector and 
 
 # Professional Experience
 
-## Program Technical Lead / AI & Automation Product Manager
+## Classified AI Lead for the Mission Systems Sector
 
 **Accenture Federal Services** – Chattanooga, TN _(Jun 2025 – Present)_
 
 **Strategy & Leadership Scale:**
 
-- Lead AI strategy for a federal sector: priorities, roadmap, and platform direction across classified cloud programs
+- Lead AI strategy for the Mission Systems sector: priorities, roadmap, and platform direction across classified cloud programs
 - Managing 10 DevOps teams across infrastructure, platform, and security functions within primary program
 - Scaled from 4 teams to 10 teams in one year while delivering on 72 tracked initiatives
 - Key contributor to capture strategy supporting sole-source contract awards totaling more than $100M
