@@ -4,29 +4,30 @@
 
 # Professional Summary
 
-Classified cloud AI lead and agent systems architect. I lead AI strategy and platform delivery for classified federal cloud programs, and I research how autonomous agents are employed, evaluated, and governed. Currently managing 10+ DevOps and platform teams while serving as technical lead for AI platform initiatives spanning AWS GovCloud, NIPR, SIPR, JWICS, and SCIF networks. I deliver under compressed timelines, turning 6-month scopes into 9-week deliveries, while establishing scalable frameworks for cost optimization, support operations, and team development. Outside the day role, I build agent systems end to end: orchestration harnesses, MCP tooling, an agent evaluation arena, and a live marketplace where agent crews are hired for real contract work.
+AI lead and agent systems architect. I set AI strategy for a federal sector and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is agentic engineering at production scale, paired with cloud architecture and rapid automation of infrastructure and configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, 72 tracked initiatives, and capture strategy work on sole-source awards totaling more than $100M.
 
 # Core Competencies
 
-- **IaC / CaC**
-  - Terraform, Ansible
-  - AWS SSM, CloudFormation
-  - GitLab Runners, Argo CD, GitHub Actions
-
-- **Container Orchestration**
-  - Kubernetes (EKS, multi-tenant)
-  - Docker Compose, Helm
-  - Podman
-
-- **Languages**
-  - Python, Go, JavaScript
-  - PowerShell, Bash
-
-- **AI/ML Platforms**
+- **Agentic Engineering**
+  - Persistent agent frameworks
   - Agent harness engineering
   - Multi-agent orchestration systems
   - Agent evaluation and benchmarking
   - Model Context Protocol (MCP) integration
+
+- **Cloud Architecture & Automation**
+  - AWS GovCloud (Unclassified & Top Secret)
+  - Rapid IaC / CaC automation: Terraform, Ansible
+  - AWS SSM, CloudFormation
+  - Kubernetes (EKS, multi-tenant), Docker, Helm, Podman
+  - GitLab Runners, Argo CD, GitHub Actions
+
+- **Languages & Frontend**
+  - Go, Python
+  - Svelte, JavaScript, TypeScript
+  - PowerShell, Bash
+
+- **AI/ML Platforms**
   - AWS Bedrock (Claude, Titan)
   - RAG architectures
   - Embedding-Based Classification
@@ -41,10 +42,12 @@ Classified cloud AI lead and agent systems architect. I lead AI strategy and pla
   - Keycloak SSO, LDAP Integration
 
 - **Virtualization**
-  - AWS GovCloud (Unclassified & Top Secret)
   - Azure, GCP, VMware Horizon & VxRail, KVM
 
-- **Systems & Vision**
+- **Strategy & Customer Engagement**
+  - Sector AI strategy and roadmapping
+  - Rapid architecture whiteboarding with customers
+  - Capture strategy for large sole-source awards
   - Multi-team sprint planning, initiative setting, goal tracking
   - Mentoring, performance coaching, stakeholder reporting
   - Technical documentation, video production, executive demos
@@ -55,16 +58,18 @@ Classified cloud AI lead and agent systems architect. I lead AI strategy and pla
 
 **Accenture Federal Services** – Chattanooga, TN _(Jun 2025 – Present)_
 
-**Leadership Scale:**
+**Strategy & Leadership Scale:**
 
+- Lead AI strategy for a federal sector: priorities, roadmap, and platform direction across classified cloud programs
 - Managing 10 DevOps teams across infrastructure, platform, and security functions within primary program
-- Serving as technical lead for secondary program driving AI platform architecture
 - Scaled from 4 teams to 10 teams in one year while delivering on 72 tracked initiatives
-- Product management efforts have secured $3M in contracts across the defense industrial base
+- Key contributor to capture strategy supporting sole-source contract awards totaling more than $100M
 - Instrumental in DoW demonstrations for Pentagon and Air Force stakeholders
+- Customer-facing architecture lead: whiteboard abstract architectures with stakeholders and carry them to delivery on aggressive timelines
 
-**AI Platform Innovation:**
+**Agentic Systems & AI Platforms:**
 
+- Lead developer and maintainer of an emergent persistent agent framework, built alongside a team of engineers and operated across classified environments
 - Core contributor to FedGenius, AFS's cloud-agnostic RAG and chat platform operational in classified environments
 - Deployed AI automation in CI/CD pipelines via secure Bedrock endpoints, a capability most vendors cannot provide in classified networks
 - Enabled strategic partnership with Istari Digital for Model Context Protocol integration, enabling AI-to-engineering-model connectivity
