@@ -149,6 +149,7 @@ Classified AI Lead for the Mission Systems sector and agent systems architect. I
 # Certifications
 
 - Top-Secret Security Clearance - SCI (Active)
+- AWS Certified AI Practitioner – Amazon Web Services
 - Security+ – CompTIA (2019 – 2029)
 - ITIL v4 Foundations – AXELOS (2019)
 
