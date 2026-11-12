@@ -74,4 +74,5 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add pdf/resume.pdf pdf/Micah_Longmire-*.pdf docs/resume.pdf docs/Micah_Longmire-*.pdf
           git diff --staged --quiet || git commit -m "Auto-generate resume PDF and update GitHub Pages"
+          git pull --rebase origin main
           git push
