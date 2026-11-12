@@ -1,117 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Micah Longmire - Resume</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-            color: #e0e0e0;
-        }
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        h1 {
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-        .subtitle {
-            color: #64b5f6;
-            font-size: 1.1rem;
-        }
-        .pdf-container {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-        .pdf-viewer {
-            width: 100%;
-            height: 80vh;
-            border: none;
-        }
-        .download-section {
-            text-align: center;
-        }
-        .download-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
-        }
-        .links {
-            margin-top: 2rem;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .links a {
-            color: #64b5f6;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .links a:hover {
-            color: #90caf9;
-        }
-        footer {
-            margin-top: auto;
-            padding-top: 2rem;
-            color: #666;
-            font-size: 0.9rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micah Longmire</title>
+<meta name="description" content="Micah Longmire: agent systems architect in Chattanooga, Tennessee. Portfolio of public products: agent platforms, an open specification, a game, and writing.">
+<style>
+    :root {
+        --bg: #000000;
+        --ink: #e8e6e1;
+        --dim: #9a968e;
+        --faint: #5c5952;
+        --rule: #26241f;
+        --accent: #b3402f;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+        font-size: 18px;
+        line-height: 1.55;
+        padding: 4.5rem 1.5rem 5rem;
+    }
+    main { max-width: 720px; margin: 0 auto; }
+    h1 {
+        font-size: 2.6rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        line-height: 1.15;
+    }
+    .standfirst {
+        margin-top: 1.1rem;
+        font-size: 1.13rem;
+        max-width: 34em;
+    }
+    .standfirst .dim { color: var(--dim); }
+    .rule {
+        border: none;
+        border-top: 2px solid var(--accent);
+        width: 3.5rem;
+        margin: 1.8rem 0;
+    }
+    nav.primary {
+        font-family: ui-sans-system, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 0.92rem;
+        letter-spacing: 0.02em;
+    }
+    nav.primary a {
+        color: var(--ink);
+        text-decoration: none;
+        border-bottom: 1px solid var(--faint);
+        padding-bottom: 1px;
+        margin-right: 1.4rem;
+    }
+    nav.primary a:hover { border-bottom-color: var(--accent); color: #fff; }
+    section { margin-top: 3.2rem; }
+    h2 {
+        font-family: ui-sans-system, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--dim);
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--rule);
+    }
+    .feature { padding: 1.2rem 0 1.3rem; border-bottom: 1px solid var(--rule); }
+    .feature h3 { font-size: 1.7rem; font-weight: 600; }
+    .feature h3 a { color: var(--ink); text-decoration: none; }
+    .feature h3 a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+    .feature p { color: var(--dim); margin: 0.5rem 0 0.7rem; max-width: 38em; }
+    .feature p a { color: var(--ink); }
+    .entry {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 1.5rem;
+        padding: 1.05rem 0;
+        border-bottom: 1px solid var(--rule);
+        align-items: baseline;
+    }
+    .entry h3 {
+        font-size: 1.12rem;
+        font-weight: 600;
+    }
+    .entry h3 a {
+        color: var(--ink);
+        text-decoration: none;
+    }
+    .entry h3 a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+    .entry p {
+        grid-column: 1 / 2;
+        color: var(--dim);
+        font-size: 0.98rem;
+        margin-top: 0.25rem;
+        max-width: 36em;
+    }
+    .tag {
+        font-family: ui-sans-system, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--faint);
+        white-space: nowrap;
+        padding-top: 0.3rem;
+    }
+    footer {
+        margin-top: 4rem;
+        font-family: ui-sans-system, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+        font-size: 0.85rem;
+        color: var(--faint);
+    }
+    @media (max-width: 560px) {
+        body { padding-top: 3rem; font-size: 17px; }
+        h1 { font-size: 2.1rem; }
+        .feature { padding: 1.2rem 0 1.3rem; border-bottom: 1px solid var(--rule); }
+    .feature h3 { font-size: 1.7rem; font-weight: 600; }
+    .feature h3 a { color: var(--ink); text-decoration: none; }
+    .feature h3 a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; }
+    .feature p { color: var(--dim); margin: 0.5rem 0 0.7rem; max-width: 38em; }
+    .feature p a { color: var(--ink); }
+    .entry { grid-template-columns: 1fr; }
+        .tag { padding-top: 0.15rem; }
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Micah Longmire</h1>
-            <p class="subtitle">Program Technical Lead / AI & Automation Product Manager</p>
-        </header>
+<main>
+    <header>
+        <h1>Micah Longmire</h1>
+        <p class="standfirst">Agent systems architect in Chattanooga, Tennessee. <span class="dim">I lead AI strategy for the Mission Systems sector, where I build persistent agent frameworks for classified cloud programs. On my own time I run a small venture studio, Ologos, and ship agent products in public.</span></p>
+        <hr class="rule">
+        <nav class="primary">
+            <a href="resume.pdf">Resume (PDF)</a>
+            <a href="https://github.com/bobbyhiddn">GitHub</a>
+            <a href="https://www.linkedin.com/in/micah-longmire">LinkedIn</a>
+            <a href="mailto:mlmicahlongmire@gmail.com">Email</a>
+        </nav>
+    </header>
 
-        <div class="pdf-container">
-            <iframe class="pdf-viewer" src="resume.pdf" type="application/pdf">
-                <p>Your browser does not support PDFs.
-                <a href="resume.pdf">Download the PDF</a>.</p>
-            </iframe>
-        </div>
 
-        <div class="download-section">
-            <a href="resume.pdf" download="Micah_Longmire_resume_2026-11-12.pdf" class="download-btn">Download Resume (PDF)</a>
+    <section class="featured">
+        <h2>Featured</h2>
+        <div class="feature">
+            <h3><a href="https://github.com/bobbyhiddn/Magi.CLI">Magi CLI</a></h3>
+            <p>An arcane command line interface, forged in Python. Commands are spells: an extensible set of filesystem and automation workings you cast from the terminal, with new spells added as plain files. Its spell library, meditation chamber, and architecture notes live in companion repositories: <a href="https://github.com/bobbyhiddn/Magi.Spells">Magi.Spells</a>, <a href="https://github.com/bobbyhiddn/Magi.Chamber">Magi.Chamber</a>, and <a href="https://github.com/bobbyhiddn/Magi.Library">Magi.Library</a>.</p>
+            <span class="tag">Open source &middot; Python</span>
         </div>
+    </section>
 
-        <div class="links">
-            <a href="mailto:mlmicahlongmire@gmail.com">mlmicahlongmire@gmail.com</a>
-            <a href="https://github.com/bobbyhiddn" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/micah-longmire" target="_blank">LinkedIn</a>
+    <section>
+        <h2>Agent Platforms</h2>
+        <div class="entry">
+            <h3><a href="https://crewport.ai">CrewPort</a></h3>
+            <span class="tag">Live</span>
+            <p>A marketplace where AI agents take on contracted work. Clients post jobs, agent crews deliver against them, and payment runs through the platform.</p>
         </div>
-    </div>
+        <div class="entry">
+            <h3><a href="https://diskuss.fly.dev">Diskuss</a></h3>
+            <span class="tag">Live</span>
+            <p>An arena where agents compete head to head on graded tasks, rated on a Glicko-2 index.</p>
+        </div>
+        <div class="entry">
+            <h3><a href="https://legate.studio">Legate Studio</a></h3>
+            <span class="tag">Live</span>
+            <p>A personal knowledge library built MCP-first, so the agents you employ can search, read, and write memory as a service.</p>
+        </div>
+        <div class="entry">
+            <h3>AgentBay</h3>
+            <span class="tag">Reference architecture</span>
+            <p>A modular open-systems reference architecture for agent platforms, built on AICP.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Open Source &amp; Specification</h2>
+        <div class="entry">
+            <h3><a href="https://github.com/crewport-repos/AICP">AICP</a></h3>
+            <span class="tag">Draft v0.1.0</span>
+            <p>Agent Identity Card Protocol: a public specification for platform-mediated agent identity.</p>
+        </div>
+        <div class="entry">
+            <h3><a href="https://github.com/bobbyhiddn/futon">futon</a></h3>
+            <span class="tag">Go library</span>
+            <p>Text in, vectors out: in-process embedding models for Go, with no external service to run.</p>
+        </div>
+        <div class="entry">
+            <h3><a href="https://github.com/bobbyhiddn/Sympathy-MCP">Sympathy-MCP</a></h3>
+            <span class="tag">MCP server</span>
+            <p>An MCP server for puppeteering virtual machines over SSH, so agents can operate real machines.</p>
+        </div>
+        <div class="entry">
+            <h3><a href="https://github.com/bobbyhiddn/Agnostic">Agnostic</a></h3>
+            <span class="tag">Python</span>
+            <p>A model-agnostic tool loop structure in Python: swap the model, keep the loop.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Games</h2>
+        <div class="entry">
+            <h3><a href="https://beltbattles.fly.dev">Beltbattles</a></h3>
+            <span class="tag">Live</span>
+            <p>An autobattler where a fighter's belt length is its damage. Asynchronous PvP against named ghosts.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Writing</h2>
+        <div class="entry">
+            <h3><a href="https://micahlongmire.substack.com">Substack</a></h3>
+            <span class="tag">Essays</span>
+            <p>On oracle machines, governing agent workforces, and biblical exegesis. The agent trilogy lives here, and the book in progress, <i>The Last Thesis</i>, grows out of it.</p>
+        </div>
+        <div class="entry">
+            <h3><a href="https://publish.obsidian.md/thought-realm">The Thought Realm</a></h3>
+            <span class="tag">Digital garden</span>
+            <p>The Loci of Micah Longmire: a public notebook on theology, systems, and AI.</p>
+        </div>
+    </section>
 
     <footer>
-        Auto-generated from <a href="https://github.com/bobbyhiddn/Resume_Gen">Resume_Gen</a>
+        <p>&copy; 2026 Micah Longmire &middot; Chattanooga, Tennessee</p>
     </footer>
+</main>
 </body>
 </html>
