@@ -13,6 +13,16 @@ def build_resume(md_path, portrait_path):
     if not portrait_file.exists():
         raise FileNotFoundError(f"Portrait image not found: {portrait_path}")
 
+    # The portrait in the repo was stored as base64 text by a bad upload.
+    # If it is not JPEG bytes, decode it in place so the build can use it.
+    _pdata = portrait_file.read_bytes()
+    if not _pdata.startswith(b"\xff\xd8"):
+        import base64
+        try:
+            portrait_file.write_bytes(base64.b64decode(_pdata, validate=True))
+        except Exception:
+            pass
+
     # Read the markdown content
     md_content = md_file.read_text(encoding='utf-8')
 
@@ -86,7 +96,7 @@ def build_resume(md_path, portrait_path):
             # Extract the title (text between ** markers)
             title_match = re.search(r'- \*\*(.*?)\*\*', escaped_block)
             if title_match:
-                title = title_match.group(1)
+                comp_title = title_match.group(1)
                 
                 # Find all nested bullet points - use a more robust pattern
                 nested_items = re.findall(r'  - (.*?)(?=\n  -|\n\n|\n-|$)', escaped_block, re.DOTALL)
@@ -100,7 +110,7 @@ def build_resume(md_path, portrait_path):
                         nested_bullets += f'\\item {nested_item}\n'
                     nested_bullets += '\\end{itemize}'
                 
-                escaped_items.append(f'\\textbf{{{title}}} {nested_bullets}')
+                escaped_items.append(f'\\textbf{{{comp_title}}} {nested_bullets}')
             
         # Replace the Core Competencies section with our custom formatted version
         # Remove the original header since our LaTeX command will add it
