@@ -1,1 +1,153 @@
-JSBNaWNhaCBMb25nbWlyZSAlIFNlbmlvciBEZXZPcHMgRW5naW5lZXIgLyBNYW5hZ2VyIOKAoiBSb3ksIFVU4oCCfOKAglttbG1pY2FobG9uZ21pcmVAZ21haWwuY29tXShtYWlsdG86bWxtaWNhaGxvbmdtaXJlQGdtYWlsLmNvbSnigIJ84oCCZ2l0aHViLmNvbS9ib2JieWhpZGRu4oCCfOKAgmxpbmtlZGluLmNvbS9pbi9taWNhaC1sb25nbWlyZSAlIFVwZGF0ZWQ6IDIwMjUtMDQtMzAKCiMgUHJvZmVzc2lvbmFsIFN1bW1hcnkKClNlbmlvciBEZXZPcHMgRW5naW5lZXIgLyBNYW5hZ2VyIHdpdGggYSBzeXN0ZW1zLXRoaW5raW5nIG1pbmRzZXQsIGRyaXZlbiBieSB0aGUgYmVsaWVmIHRoYXQgd2VsbC1kZXNpZ25lZCBpbmZyYXN0cnVjdHVyZSBpcyBib3RoIGVsZWdhbnQgYW5kIHVzZWZ1bC4gSSBidWlsZCBzZWN1cmUsIGF1dG9tYXRlZCBjbG91ZCBwbGF0Zm9ybXMgYW5kIGhpZ2gtZnVuY3Rpb25pbmcgdGVhbXMgYnkgdHJlYXRpbmcgY29tcGxleGl0eSBhcyBhIHN0cnVjdHVyZSB0byBiZSB1bmRlcnN0b29kLCBub3QgYXZvaWRlZC4gSSBwcmFjdGljZSBEZXZPcHMgYXMgYSBwYXNzaW9uIHdpdGggYSBjdW11bGF0aXZlIGJvZHkgb2YgcHJhY3RpY2FsIGtub3dsZWRnZSwgY3VsdGl2YXRlZCBhY3Jvc3MgeWVhcnMgb2YgYXJjaGl0ZWN0aW5nLCBhdXRvbWF0aW5nLCBhbmQgc2NhbGluZyBzeXN0ZW1zIHVuZGVyIHJlYWwtd29ybGQgY29uc3RyYWludHMgYW5kIGRlYWRsaW5lcy4gSSBsZWFkIGJ5IHNvbHZpbmcgcm9vdCBwcm9ibGVtcywgdGlnaHRlbmluZyBmZWVkYmFjayBsb29wcywgYW5kIG1lbnRvcmluZyBlbmdpbmVlcnMgdG93YXJkIG9wZXJhdGlvbmFsIGNsYXJpdHkuIEJleW9uZCBpbmZyYXN0cnVjdHVyZSwgSSBicmluZyBwcm9mZXNzaW9uYWwtZ3JhZGUgbXVsdGltZWRpYSBza2lsbHMgdG8gY3JhZnQgY2xlYXIsIGNvbXBlbGxpbmcgdGVjaG5pY2FsIGNvbW11bmljYXRpb25z4oCUZnJvbSBzdGFrZWhvbGRlciBicmllZmluZ3MgdG8gaW50ZXJuYWwgdHJhaW5pbmcgZGVtb3MuIEkgY29uc2lkZXIgbXlzZWxmIGEgc3lzdGVtcyBlbmdpbmVlciB3aXRoIHNvZnQgc2tpbGxzLgoKIyBDb3JlIENvbXBldGVuY2llcwoKLSAqKklhQyAvIENhQyoqCiAgLSBUZXJyYWZvcm0KICAtIEFuc2libGUKICAtIEFXUyBTU00KICAtIENsb3VkRm9ybWF0aW9uCiAgLSBHaXRMYWIgUnVubmVycwogIC0gQXJnbyBDRAogIC0gR2l0aHViIEFjdGlvbnMKCi0gKipDb250YWluZXIgT3JjaGVzdHJhdGlvbioqCiAgLSBEb2NrZXIgQ29tcG9zZQogIC0gS3ViZXJuZXRlcwoKLSAqKkxhbmd1YWdlcyoqCiAgLSBQeXRob24KICAtIEdvCiAgLSBKYXZhU2NyaXB0CiAgLSBQb3dlclNoZWxsCiAgLSBCYXNoCgotICoqU2VjdXJpdHkgJiBDb21wbGlhbmNlKioKICAtIFNUSUcgYXV0b21hdGlvbgogIC0gTGVhc3QtcHJpdmlsZWdlIG5ldHdvcmtpbmcKICAtIEN1c3RvbSBzY2FuIGFuZCByZW1lZGlhdGlvbiBwaXBlbGluZXMKCi0gKipEb21haW4gQWRtaW5pc3RyYXRpb24qKgogIC0gQWN0aXZlIERpcmVjdG9yeSAmIEdyb3VwIFBvbGljeQogIC0gUmVhbG0KICAtIExEQVAgSW50ZWdyYXRpb24KCi0gKipWaXJ0dWFsaXphdGlvbioqCiAgLSBBV1MKICAtIEF6dXJlCiAgLSBHQ1AKICAtIFZNd2FyZSBIb3Jpem9uICYgVnhSYWlsCiAgLSBLVk0KCi0gKipQcm9jZXNzICYgVG9vbHMqKgogIC0gUm9hZC1tYXBwaW5nCiAgLSBTcHJpbnQgYW5kIHF1YXJ0ZXJseSBwbGFubmluZwogIC0gTWVudG9yaW5nCiAgLSBDcm9zcy10ZWFtIGNvb3JkaW5hdGlvbgogIC0gU0FGZS9BZ2lsZS9TY3J1bQogIC0gSmlyYSAmIENvbmZsdWVuY2UKICAtIFRlY2huaWNhbCBEb2N1bWVudGF0aW9uCiAgLSBWaWRlbyBTY3JpcHRpbmcsIEZpbG1pbmcsIEVkaXRpbmcKICAtIFByZXNlbnRhdGlvbiAmIERlbW8gUHJvZHVjdGlvbiBmb3IgVGVjaG5pY2FsIEF1ZGllbmNlcwoKIyBQcm9mZXNzaW9uYWwgRXhwZXJpZW5jZQoKIyMgU2VuaW9yIERldk9wcyBFbmdpbmVlciAvIE1hbmFnZXIKCioqQWNjZW50dXJlIEZlZGVyYWwgU2VydmljZXMqKiDigJMgUm95LCBVVOKAgl8oRmViIDIwMjMg4oCTIFByZXNlbnQpXwoKLSBMZWQgYXJjaGl0ZWN0dXJlIGFuZCBhY2NyZWRpdGF0aW9uIG9mIGEgY29kZS1kcml2ZW4gY2xvdWQgZGV2ZWxvcG1lbnQgZW52aXJvbm1lbnTigJRmcm9tIGJsYW5rIHJlcG8gdG8gZnVsbCBzZWN1cml0eSBhcHByb3ZhbOKAlG5vdyB0aGUgdGVtcGxhdGUgZm9yIGZ1dHVyZSBpbml0aWF0aXZlcy4KICAgIAotIEJ1aWx0IGFuIGVudGVycHJpc2UgSWFDIGZyYW1ld29yayBhZG9wdGVkIGFjcm9zcyBtdWx0aXBsZSBwcm9kdWN0IGFuZCBvcGVyYXRpb25zIHRlYW1zOyByZWR1Y2VkIGluZnJhc3RydWN0dXJlIGRlcGxveW1lbnQgdGltZSBmcm9tIHdlZWtzIHRvIGRheXMgdG8gaG91cnMuCiAgICAKLSBNYW5hZ2VkIGFuZCBtZW50b3JlZCA0IERldk9wcyBzcXVhZHM6IGJhY2tsb2cgZ3Jvb21pbmcsIHZlbG9jaXR5IHRyYWNraW5nLCBwZXJmb3JtYW5jZSBjb2FjaGluZywgYW5kIHN0YWtlaG9sZGVyIHJlcG9ydGluZy4KICAgIAotIEF1dG9tYXRlZCBPUyB1cGdyYWRlcyBhbmQgaGFyZGVuaW5nIGFjcm9zcyBhIG11bHRpLWVudmlyb25tZW50IGZsZWV0LCBlbGltaW5hdGluZyB3ZWVrcyBvZiBtYW51YWwgZWZmb3J0IGFuZCByYWlzaW5nIGNvbXBsaWFuY2Ugc2NvcmVzLgogICAgCi0gU3RyZWFtbGluZWQgVGVycmFmb3JtICsgQW5zaWJsZSBwaXBlbGluZXMsIGN1dHRpbmcgZGVwbG95IHRpbWVzIHdoaWxlIGltcHJvdmluZyBhdWRpdGFiaWxpdHkgYW5kIHJvbGxiYWNrLgogICAgCi0gRHJvdmUgZW1lcmdlbnQgQUkgdXRpbGl6YXRpb24gaW4gcGlwZWxpbmVzLCB0ZXJtaW5hbHMsIGFuZCBob21lLWdyb3duIHRvb2xpbmcgdGhyb3VnaCBib3RoIGxvY2FsIGFuZCBjbG91ZC1ob3N0ZWQgbW9kZWxzLgogICAgCi0gUHJvZHVjZWQgZXhlY3V0aXZlLWxldmVsIGRlbW9uc3RyYXRpb25zIGFuZCB0ZWNobmljYWwgd2Fsa3Rocm91Z2hzIHVzaW5nIHByb2Zlc3Npb25hbC1ncmFkZSB2aWRlbyBlZGl0aW5nIGFuZCBzY3JpcHRpbmcuCiAgICAKCiMjIERldk9wcyBFbmdpbmVlcgoKKipOb3J0aHJvcCBHcnVtbWFuKiog4oCTIFJveSwgVVTigIJfKE9jdCAyMDIyIOKAkyBGZWIgMjAyMylfCgotIEludHJvZHVjZWQgSW5mcmFzdHJ1Y3R1cmUtYXMtQ29kZSB0byBhIG5ldyBWREkgcGxhdGZvcm0sIGVuYWJsaW5nIGNvbnNpc3RlbnQgbXVsdGktc2l0ZSByb2xsb3V0cy4KICAgIAotIEF1dGhvcmVkIFB5dGhvbiBhdXRvbWF0aW9uIHRoYXQgaW50ZWdyYXRlZCB3aXRoIGludGVybmFsIEFQSXMsIGhhbHZpbmcgbWFudWFsIG1haW50ZW5hbmNlIHRpbWUuCiAgICAKLSBEZWxpdmVyZWQgZXhlY3V0aXZlLWxldmVsIGRlbW9zIGFuZCBrbm93bGVkZ2UgdHJhbnNmZXJzLCBzZXR0aW5nIHRoZSBzdGFuZGFyZCBmb3IgZm9sbG93LW9uIERldk9wcyBwcm9qZWN0cy4KICAgIAoKIyMgU3lzdGVtcyBFbmdpbmVlcgoKKipOb3J0aHJvcCBHcnVtbWFuKiog4oCTIFJveSwgVVTigIJfKEZlYiAyMDIyIOKAkyBPY3QgMjAyMilfCgotIFNhdmVkIHRoZSBwcm9ncmFtIGxhcmdlIGNvbnN1bHRpbmcgY29zdHMgYnkgdGFraW5nIG9uIGxhcmdlIHByb2plY3RzIGFuZCBkb2N1bWVudGluZyB0aGUgZGVwbG95bWVudCBwcm9jZXNzLCB3aGljaCBJIHR1cm5lZCBvdmVyIHN1Y2Nlc3NmdWxseSBudW1lcm91cyB0aW1lcwoKLSAgIENvbnRyaWJ1dGVkIGluIGxhcmdlIHBhcnQgdG8gdGhlIGRldmVsb3BtZW50LCBpbXBsZW1lbnRhdGlvbiwgYW5kIHR1cm4gdG8gcHJvZHVjdGlvbiBvZiBtdWx0aXBsZSBwcm9ncmFtLWNyaXRpY2FsIHByb2plY3RzOiAKICAgIC0gSUJNIEphenog4oCTIFRoZSBJQk0gd2ViLWJhc2VkIHN1aXRlIG9mIFF1YWxpdHkgTWFuYWdlbWVudCwgUmlzayBNYW5hZ2VtZW50LCBDb250cmlidXRpb24gTWFuYWdlbWVudCwgYW5kIFJlcXVpcmVtZW50IE1hbmFnZW1lbnQgc29mdHdhcmUKICAgIC0gVk13YXJlIEhvcml6b24gOCDigJMgRGV2ZWxvcGVkIGFuZCBpbXBsZW1lbnRlZCB0aGUgc3RhbmQtdXAgb2YgdGhlIHByb2dyYW3igJlzIHZpcnR1YWwgZGVza3RvcCBpbmZyYXN0cnVjdHVyZQogICAgLSBWTXdhcmUgVnhSYWlsIERhdGFjZW50ZXIgU3RhbmR1cCAKCiMjIENvbXB1dGVyIFN5c3RlbXMgQW5hbHlzdAoKKipOb3J0aHJvcCBHcnVtbWFuKiog4oCTIFJveSwgVVTigIJfKDIwMjAg4oCTIDIwMjIpXwoKLSBTdXBwb3J0ZWQgbGFyZ2Utc2NhbGUgZGlzYXN0ZXItcmVjb3ZlcnkgZWZmb3J0cywgdmlydHVhbGl6aW5nIGNyaXRpY2FsIHdvcmtsb2FkcyBhbmQgcmVzdG9yaW5nIHNlcnZpY2VzIGFoZWFkIG9mIHNjaGVkdWxlLgogICAgCi0gU2VydmVkIGFzIHByaW1hcnkgYWRtaW4gZm9yIGEgc2VjdXJlIFZESSBlc3RhdGUsIHR1bmluZyBwb2xpY2llcyBhbmQgb3B0aW1pemluZyBwZXJmb3JtYW5jZS4KICAgIAoKIyMgSVQgU3VwcG9ydCBUZWNobmljaWFuIElJSQoKKipOb3J0aHJvcCBHcnVtbWFuKiog4oCTIFJveSwgVVTigIJfKDIwMTgg4oCTIDIwMjApXwoKLSBQYWNrYWdlZCwgdGVzdGVkLCBhbmQgZGVwbG95ZWQgc29mdHdhcmUgdG8gY2xhc3NpZmllZCBjbGllbnQgc3lzdGVtczsgbWFpbnRhaW5lZCBvdXRhZ2UgYW5kIHJlY292ZXJ5IHJ1bmJvb2tzLgogICAgCgojIyBNYXNzIENvbW11bmljYXRpb25zIFNwZWNpYWxpc3Qg4oCUIDQ2UwoKKipBcm15IE5hdGlvbmFsIEd1YXJkKiog4oCTIEphY2tzb24sIE1T4oCCXygyMDE2IOKAkyAyMDIxKV8KCi0gUHJvZHVjZWQgbXVsdGltZWRpYSBjb250ZW50IGZvciBuYXRpb253aWRlIGRpc3RyaWJ1dGlvbjsgaW50ZXJ2aWV3ZWQgc2VuaW9yIG1pbGl0YXJ5IGFuZCBzdGF0ZSBsZWFkZXJzaGlwLgogICAgCi0gTGVkIHZpZGVvIHByb2R1Y3Rpb24gZnJvbSBzY3JpcHRpbmcgdG8gZWRpdGluZyBmb3IgcHVibGljIGFmZmFpcnMsIHRyYWluaW5nLCBhbmQgZXhlY3V0aXZlIGNvbW11bmljYXRpb24uCiAgICAKCiMjIElUIFNlcnZpY2UgVGVjaG5pY2lhbgoKKipQZWFrIFNvbHV0aW9ucyoqIOKAkyBCcmFuZG9uLCBNU+KAgl8oMjAxNCDigJMgMjAxOClfCgotIFBlcmZvcm1lZCBvbi1zaXRlIHJlcGFpcnMsIHBhdGNoaW5nLCBhbmQgZW5kLXVzZXIgdHJhaW5pbmcgZm9yIHNtYWxsLWJ1c2luZXNzIGNsaWVudHMuCiAgICAKCiMgQ2VydGlmaWNhdGlvbnMKCi0gVG9wLVNlY3JldCBTZWN1cml0eSBDbGVhcmFuY2UgKEFjdGl2ZSkKICAgIAotIFNlY3VyaXR5KyDigJMgQ29tcFRJQSAoMjAxOSDigJMgMjAyOSkKICAgIAotIElUSUwgdjQgRm91bmRhdGlvbnMg4oCTIEFYRUxPUyAoMjAxOSkKICAgIAoKIyBFZHVjYXRpb24KCi0gRGVmZW5zZSBJbmZvcm1hdGlvbiBTY2hvb2wsIEZvcnQgTWVhZGUgTUQg4oCUIE1PUyBDZXJ0aWZpY2F0aW9uICgyMDE4KQogICAgCi0gVmFuY2xlYXZlIEhpZ2ggU2Nob29sLCBWYW5jbGVhdmUgTVMg4oCUIERpcGxvbWEgKDIwMTMpCiAgICAKCiMgUmVmZXJlbmNlcwoKQXZhaWxhYmxlIHVwb24gcmVxdWVzdC4KCgpbUmVwbyB0aGF0IGdlbmVyYXRlZCB0aGlzIHJlc3VtZS5dKGh0dHBzOi8vZ2l0aHViLmNvbS9ib2JieWhpZGRuL1Jlc3VtZV9HZW4uZ2l0KQ==
+% Micah Longmire % Senior DevOps Engineer / Manager • Roy, UT | [mlmicahlongmire@gmail.com](mailto:mlmicahlongmire@gmail.com) | github.com/bobbyhiddn | linkedin.com/in/micah-longmire % Updated: 2025-04-30
+
+# Professional Summary
+
+Senior DevOps Engineer / Manager with a systems-thinking mindset, driven by the belief that well-designed infrastructure is both elegant and useful. I build secure, automated cloud platforms and high-functioning teams by treating complexity as a structure to be understood, not avoided. I practice DevOps as a passion with a cumulative body of practical knowledge, cultivated across years of architecting, automating, and scaling systems under real-world constraints and deadlines. I lead by solving root problems, tightening feedback loops, and mentoring engineers toward operational clarity. Beyond infrastructure, I bring professional-grade multimedia skills to craft clear, compelling technical communications—from stakeholder briefings to internal training demos. I consider myself a systems engineer with soft skills.
+
+# Core Competencies
+
+- **IaC / CaC**
+  - Terraform
+  - Ansible
+  - AWS SSM
+  - CloudFormation
+  - GitLab Runners
+  - Argo CD
+  - Github Actions
+
+- **Container Orchestration**
+  - Docker Compose
+  - Kubernetes
+
+- **Languages**
+  - Python
+  - Go
+  - JavaScript
+  - PowerShell
+  - Bash
+
+- **Security & Compliance**
+  - STIG automation
+  - Least-privilege networking
+  - Custom scan and remediation pipelines
+
+- **Domain Administration**
+  - Active Directory & Group Policy
+  - Realm
+  - LDAP Integration
+
+- **Virtualization**
+  - AWS
+  - Azure
+  - GCP
+  - VMware Horizon & VxRail
+  - KVM
+
+- **Process & Tools**
+  - Road-mapping
+  - Sprint and quarterly planning
+  - Mentoring
+  - Cross-team coordination
+  - SAFe/Agile/Scrum
+  - Jira & Confluence
+  - Technical Documentation
+  - Video Scripting, Filming, Editing
+  - Presentation & Demo Production for Technical Audiences
+
+# Professional Experience
+
+## Senior DevOps Engineer / Manager
+
+**Accenture Federal Services** – Roy, UT _(Feb 2023 – Present)_
+
+- Led architecture and accreditation of a code-driven cloud development environment—from blank repo to full security approval—now the template for future initiatives.
+    
+- Built an enterprise IaC framework adopted across multiple product and operations teams; reduced infrastructure deployment time from weeks to days to hours.
+    
+- Managed and mentored 4 DevOps squads: backlog grooming, velocity tracking, performance coaching, and stakeholder reporting.
+    
+- Automated OS upgrades and hardening across a multi-environment fleet, eliminating weeks of manual effort and raising compliance scores.
+    
+- Streamlined Terraform + Ansible pipelines, cutting deploy times while improving auditability and rollback.
+    
+- Drove emergent AI utilization in pipelines, terminals, and home-grown tooling through both local and cloud-hosted models.
+    
+- Produced executive-level demonstrations and technical walkthroughs using professional-grade video editing and scripting.
+    
+
+## DevOps Engineer
+
+**Northrop Grumman** – Roy, UT _(Oct 2022 – Feb 2023)_
+
+- Introduced Infrastructure-as-Code to a new VDI platform, enabling consistent multi-site rollouts.
+    
+- Authored Python automation that integrated with internal APIs, halving manual maintenance time.
+    
+- Delivered executive-level demos and knowledge transfers, setting the standard for follow-on DevOps projects.
+    
+
+## Systems Engineer
+
+**Northrop Grumman** – Roy, UT _(Feb 2022 – Oct 2022)_
+
+- Saved the program large consulting costs by taking on large projects and documenting the deployment process, which I turned over successfully numerous times
+
+-   Contributed in large part to the development, implementation, and turn to production of multiple program-critical projects: 
+    - IBM Jazz – The IBM web-based suite of Quality Management, Risk Management, Contribution Management, and Requirement Management software
+    - VMware Horizon 8 – Developed and implemented the stand-up of the program’s virtual desktop infrastructure
+    - VMware VxRail Datacenter Standup 
+
+## Computer Systems Analyst
+
+**Northrop Grumman** – Roy, UT _(2020 – 2022)_
+
+- Supported large-scale disaster-recovery efforts, virtualizing critical workloads and restoring services ahead of schedule.
+    
+- Served as primary admin for a secure VDI estate, tuning policies and optimizing performance.
+    
+
+## IT Support Technician III
+
+**Northrop Grumman** – Roy, UT _(2018 – 2020)_
+
+- Packaged, tested, and deployed software to classified client systems; maintained outage and recovery runbooks.
+    
+
+## Mass Communications Specialist — 46S
+
+**Army National Guard** – Jackson, MS _(2016 – 2021)_
+
+- Produced multimedia content for nationwide distribution; interviewed senior military and state leadership.
+    
+- Led video production from scripting to editing for public affairs, training, and executive communication.
+    
+
+## IT Service Technician
+
+**Peak Solutions** – Brandon, MS _(2014 – 2018)_
+
+- Performed on-site repairs, patching, and end-user training for small-business clients.
+    
+
+# Certifications
+
+- Top-Secret Security Clearance (Active)
+    
+- Security+ – CompTIA (2019 – 2029)
+    
+- ITIL v4 Foundations – AXELOS (2019)
+    
+
+# Education
+
+- Defense Information School, Fort Meade MD — MOS Certification (2018)
+    
+- Vancleave High School, Vancleave MS — Diploma (2013)
+    
+
+# References
+
+Available upon request.
+
+
+[Repo that generated this resume.](https://github.com/bobbyhiddn/Resume_Gen.git)
