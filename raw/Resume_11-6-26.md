@@ -1,5 +1,5 @@
 % Micah Longmire
-% Classified AI Lead for the Mission Systems Sector • Chattanooga, TN | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
+% Classified AI Lead, AFS Mission Systems Sector • Chattanooga, TN | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
 % Updated: 2026-11-12
 
 # Professional Summary
