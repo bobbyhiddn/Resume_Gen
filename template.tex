@@ -1,52 +1,79 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+\documentclass[10pt]{article}
+\usepackage[margin=0.7in,top=0.58in,bottom=0.55in]{geometry}
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{hyperref}
-
-% Define a command for tightlist since pandoc uses it
-\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-% Define column environment for core competencies
-\newenvironment{competencycolumns}{
-  \begin{multicols}{2}
-  \setlength{\columnsep}{1cm}
-  \setlength{\columnseprule}{0pt}
-}{\end{multicols}}
-
-% Custom styles for resume sections
+\hypersetup{hidelinks}
 \usepackage{titlesec}
-\titleformat{\section}{\Large\bfseries}{}{0em}{}
-\titlespacing{\section}{0pt}{10pt}{5pt}
 
-% Custom command for core competencies section with proper bullet formatting
-\newcommand{\corecompetencies}[1]{
-  \section*{Core Competencies}
-  \begin{multicols}{2}
-  \small
-  \begin{itemize}[leftmargin=1em,itemsep=0.3em,parsep=0.15em]
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt plus 1pt minus 1pt}
+
+% Pandoc wraps markdown lists in \tightlist. Keep them compact.
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{1.5pt}%
+  \setlength{\parskip}{0pt}%
+  \setlength{\parsep}{0pt}%
+  \setlength{\topsep}{2pt}%
+}
+
+% Ragged lists do not justify or hyphenate words such as "Secret".
+\setlist[itemize]{%
+  leftmargin=1.2em,
+  itemsep=1.5pt,
+  parsep=0pt,
+  topsep=2pt,
+  partopsep=0pt,
+  before={\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000}
+}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\tolerance=1000
+\emergencystretch=2em
+\setlength{\multicolsep}{2pt}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{8pt}{2pt}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{6pt}{1pt}
+
+% Each category is emitted as an unbreakable minipage, so multicols can
+% balance only between categories and a sub-bullet cannot land alone
+% at the top of the next column.
+\newcommand{\corecompetencies}[1]{%
+  \section*{Core Competencies}%
+  \begin{multicols}{2}%
+    \raggedcolumns
+    \raggedright
+    \hyphenpenalty=10000
+    \exhyphenpenalty=10000
+    \tolerance=2000
+    \emergencystretch=1.5em
+    \small
     #1
-  \end{itemize}
-  \normalsize
-  \end{multicols}
+  \end{multicols}%
 }
 
 \begin{document}
 
-% Header with portrait and contact info
-\begin{minipage}{0.25\textwidth}
-  \includegraphics[width=\linewidth]{portrait.jpg}
+\noindent
+\begin{minipage}[t]{1.42in}
+  \vspace{0pt}
+  \includegraphics[width=\linewidth]{@@PORTRAIT@@}
 \end{minipage}%
 \hfill
-\begin{minipage}{0.7\textwidth}
-  \Large \textbf{Micah Longmire} \\
-  \normalsize Senior DevOps Engineer / Manager \\
-  Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
+\begin{minipage}[t]{\dimexpr\textwidth-1.58in\relax}
+  \vspace{0pt}
+  \raggedright
+  {\Large\bfseries @@AUTHOR@@}\\[0.2em]
+  {\normalsize @@TITLE@@}\\[0.4em]
+  {\small @@CONTACT@@}
 \end{minipage}
 
-\vspace{1em}
+\vspace{0.55em}
 
 $body$
 

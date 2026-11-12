@@ -1,10 +1,204 @@
+#!/usr/bin/env python3
+"""Build a resume PDF from markdown and a JPEG portrait."""
+
+import re
+import shutil
 import sys
-import pypandoc
 from pathlib import Path
 
-def build_resume(md_path, portrait_path):
-    """Generate a resume PDF from markdown.
+import pypandoc
+
+JPEG_MAGIC = b"\xff\xd8\xff"
+
+
+def assert_jpeg(portrait_file: Path) -> None:
+    """Fail if the portrait is not a real JPEG.
+
+    A previous upload stored raw/Portrait.jpg as base64 text. The build used
+    to decode that in place. It now requires binary JPEG bytes so a bad
+    portrait cannot pass silently.
     """
+    data = portrait_file.read_bytes()
+    if len(data) < 3 or not data.startswith(JPEG_MAGIC):
+        raise ValueError(
+            f"Portrait is not a JPEG image: {portrait_file}. "
+            "Expected binary JPEG data beginning with FFD8FF. "
+            "Base64 text and other non-image encodings are not accepted."
+        )
+
+
+def latex_escape(text: str) -> str:
+    replacements = {
+        "\\": r"\textbackslash{}",
+        "&": r"\&",
+        "%": r"\%",
+        "$": r"\$",
+        "#": r"\#",
+        "_": r"\_",
+        "{": r"\{",
+        "}": r"\}",
+        "~": r"\textasciitilde{}",
+        "^": r"\textasciicircum{}",
+    }
+    return "".join(replacements.get(char, char) for char in text)
+
+
+def parse_header(md_content: str):
+    metadata_match = re.match(r"^% (.+)\n% (.+)\n% (.+)", md_content)
+    if not metadata_match:
+        return (
+            "Micah Longmire",
+            "Program Technical Lead / AI & Automation Product Manager",
+            "Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire",
+        )
+
+    author_name = metadata_match.group(1).strip()
+    title_line = metadata_match.group(2).strip()
+    if "•" in title_line:
+        title, contact_info = (part.strip() for part in title_line.split("•", 1))
+    else:
+        title = title_line
+        contact_info = (
+            "Roy, UT | mlmicahlongmire@gmail.com | "
+            "github.com/bobbyhiddn | linkedin.com/in/micah-longmire"
+        )
+    return author_name, title, contact_info
+
+
+def format_contact(contact_info: str) -> str:
+    """Wrap contact details into two ragged lines instead of one justified line."""
+    parts = [latex_escape(part.strip()) for part in contact_info.split("|") if part.strip()]
+    if not parts:
+        return latex_escape(contact_info)
+    if len(parts) == 1:
+        return parts[0]
+    if len(parts) == 2:
+        return parts[0] + r" \\ " + parts[1]
+    line_one = parts[0] + " | " + parts[1]
+    line_two = " | ".join(parts[2:])
+    return line_one + r" \\ " + line_two
+
+
+def format_competency_block(block: str) -> str:
+    escaped = (
+        block.replace("&", r"\&")
+        .replace("%", r"\%")
+        .replace("#", r"\#")
+        .replace("_", r"\_")
+    )
+    title_match = re.search(r"- \*\*(.*?)\*\*", escaped)
+    if not title_match:
+        return ""
+    comp_title = title_match.group(1)
+    nested_items = re.findall(r"  - (.*?)(?=\n  -|\n\n|\n-|$)", escaped, re.DOTALL)
+    nested_items = [item.strip() for item in nested_items if item.strip()]
+    nested = ""
+    if nested_items:
+        nested = (
+            "\\begin{itemize}[leftmargin=1em,itemsep=1pt,parsep=0pt,topsep=1pt,partopsep=0pt]\n"
+            + "".join(f"\\item {item}\n" for item in nested_items)
+            + "\\end{itemize}"
+        )
+    # The whole category, including its sub-bullets, is one unbreakable box.
+    return (
+        "\\noindent\\begin{minipage}{\\linewidth}\n"
+        "\\raggedright\n"
+        "\\hyphenpenalty=10000\n"
+        "\\exhyphenpenalty=10000\n"
+        "\\begin{itemize}[leftmargin=1.15em,itemsep=2pt,parsep=0pt,topsep=1pt,partopsep=0pt]\n"
+        f"\\item \\textbf{{{comp_title}}}{nested}\n"
+        "\\end{itemize}\n"
+        "\\end{minipage}\\par\\vspace{0.28em}\n"
+    )
+
+
+def rewrite_competencies(md_content: str) -> str:
+    competencies_section = re.search(
+        r"# Core Competencies\s+([\s\S]+?)(?=\s+# Professional Experience)",
+        md_content,
+    )
+    if not competencies_section:
+        return md_content
+
+    competencies_text = competencies_section.group(1).strip()
+    main_items = re.findall(r"- \*\*(.*?)\*\*", competencies_text)
+    blocks = []
+    for index, item in enumerate(main_items):
+        item_start = competencies_text.find(f"- **{item}**")
+        if index < len(main_items) - 1:
+            next_start = competencies_text.find(
+                f"- **{main_items[index + 1]}**", item_start
+            )
+            block_text = competencies_text[item_start:next_start].strip()
+        else:
+            block_text = competencies_text[item_start:].strip()
+        formatted = format_competency_block(block_text)
+        if formatted:
+            blocks.append(formatted)
+
+    replacement = "\\corecompetencies{%\n" + "".join(blocks) + "}\n"
+    return md_content.replace(competencies_section.group(0), replacement)
+
+
+def render_template(author: str, title: str, contact: str, portrait_name: str) -> str:
+    template_path = Path("template.tex")
+    if not template_path.exists():
+        raise FileNotFoundError(f"LaTeX template not found: {template_path}")
+    template = template_path.read_text(encoding="utf-8")
+    required = ("@@AUTHOR@@", "@@TITLE@@", "@@CONTACT@@", "@@PORTRAIT@@", "$body$")
+    missing = [token for token in required if token not in template]
+    if missing:
+        raise ValueError(
+            "template.tex is missing required placeholders: " + ", ".join(missing)
+        )
+    if not re.fullmatch(r"[\w./-]+", portrait_name):
+        raise ValueError(f"Portrait filename is not safe to embed in LaTeX: {portrait_name}")
+    return (
+        template.replace("@@AUTHOR@@", latex_escape(author))
+        .replace("@@TITLE@@", latex_escape(title))
+        .replace("@@CONTACT@@", contact)
+        .replace("@@PORTRAIT@@", portrait_name)
+    )
+
+
+def find_latest_resume(raw_dir: Path) -> Path:
+    """Pick the newest resume without trusting file mtimes.
+
+    A fresh checkout stamps every file with the same mtime, so ``ls -t`` is
+    not a stable way to choose among raw/*.md. Prefer the pandoc ``Updated:``
+    date, then a date encoded in the filename, then the filename itself.
+    """
+    files = sorted(path for path in Path(raw_dir).glob("*.md") if path.is_file())
+    if not files:
+        raise FileNotFoundError(f"No resume markdown found in {raw_dir}")
+
+    def sort_key(path: Path):
+        text = path.read_text(encoding="utf-8", errors="replace")
+        updated = (0, 0, 0)
+        updated_match = re.search(
+            r"^%\s*Updated:\s*(\d{4})-(\d{2})-(\d{2})",
+            text,
+            re.MULTILINE,
+        )
+        if updated_match:
+            updated = tuple(int(part) for part in updated_match.groups())
+
+        file_date = (0, 0, 0)
+        iso = re.search(r"(\d{4})-(\d{2})-(\d{2})", path.stem)
+        us = re.search(r"(\d{1,2})-(\d{1,2})-(\d{2,4})$", path.stem)
+        if iso:
+            file_date = tuple(int(part) for part in iso.groups())
+        elif us:
+            month, day, year = (int(part) for part in us.groups())
+            if year < 100:
+                year += 2000
+            file_date = (year, month, day)
+        return (updated, file_date, path.name)
+
+    return max(files, key=sort_key)
+
+
+def build_resume(md_path, portrait_path):
     md_file = Path(md_path)
     portrait_file = Path(portrait_path)
 
@@ -12,254 +206,66 @@ def build_resume(md_path, portrait_path):
         raise FileNotFoundError(f"Markdown file not found: {md_path}")
     if not portrait_file.exists():
         raise FileNotFoundError(f"Portrait image not found: {portrait_path}")
+    assert_jpeg(portrait_file)
 
-    # The portrait in the repo was stored as base64 text by a bad upload.
-    # If it is not JPEG bytes, decode it in place so the build can use it.
-    _pdata = portrait_file.read_bytes()
-    if not _pdata.startswith(b"\xff\xd8"):
-        import base64
-        try:
-            portrait_file.write_bytes(base64.b64decode(_pdata, validate=True))
-        except Exception:
-            pass
+    md_content = md_file.read_text(encoding="utf-8").replace("\u2002", " ")
+    author_name, title, contact_info = parse_header(md_content)
+    modified_content = rewrite_competencies(md_content)
 
-    # Read the markdown content
-    md_content = md_file.read_text(encoding='utf-8')
-
-    # Extract metadata from pandoc-style header (% lines at top)
-    import re
-    metadata_pattern = r'^% (.+)\n% (.+)\n% (.+)'
-    metadata_match = re.match(metadata_pattern, md_content)
-
-    if metadata_match:
-        author_name = metadata_match.group(1).strip()
-        # Parse title line: "Title • Location | email | github | linkedin"
-        title_line = metadata_match.group(2).strip()
-        # Extract just the title (before the bullet point or location)
-        if '•' in title_line:
-            title = title_line.split('•')[0].strip()
-            contact_info = title_line.split('•')[1].strip()
-        else:
-            title = title_line
-            contact_info = "Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire"
-    else:
-        author_name = "Micah Longmire"
-        title = "Program Technical Lead / AI & Automation Product Manager"
-        contact_info = "Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire"
-    
-    # Create a temporary markdown file with modified content for better PDF generation
-    temp_md_file = Path("temp_resume.md")
-    
-    # Process the markdown content to create a two-column layout for core competencies
-    import re
-    
-    # Find the Core Competencies section
-    competencies_section = re.search(r'# Core Competencies\s+([\s\S]+?)(?=\s+# Professional Experience)', md_content)
-    
-    if competencies_section:
-        # Extract all competency items with their nested bullets
-        competencies_text = competencies_section.group(1).strip()
-        
-        # Find all main competency items (lines starting with '- **')
-        main_items_pattern = r'- \*\*(.*?)\*\*'
-        main_competency_items = re.findall(main_items_pattern, competencies_text)
-        
-        # Process each main competency item and its nested items
-        competency_blocks = []
-        for i, item in enumerate(main_competency_items):
-            # Find the start position of this competency item
-            item_start = competencies_text.find(f'- **{item}**')
-            
-            # Find the end position (start of next item or end of section)
-            if i < len(main_competency_items) - 1:
-                next_item_start = competencies_text.find(f'- **{main_competency_items[i+1]}**', item_start)
-                block_text = competencies_text[item_start:next_item_start].strip()
-            else:
-                # For the last item, go to the end of the competencies section
-                block_text = competencies_text[item_start:].strip()
-            
-            competency_blocks.append(block_text)
-        
-
-        
-        # Split into two halves for two columns
-        half_point = len(competency_blocks) // 2
-        first_half = competency_blocks[:half_point]
-        second_half = competency_blocks[half_point:]
-        
-        # Format and escape LaTeX special characters in competency items
-        escaped_items = []
-        for block in first_half + second_half:
-            # Replace LaTeX special characters
-            escaped_block = block.replace('&', '\\&').replace('%', '\\%').replace('#', '\\#')
-            
-            # Extract the title (text between ** markers)
-            title_match = re.search(r'- \*\*(.*?)\*\*', escaped_block)
-            if title_match:
-                comp_title = title_match.group(1)
-                
-                # Find all nested bullet points - use a more robust pattern
-                nested_items = re.findall(r'  - (.*?)(?=\n  -|\n\n|\n-|$)', escaped_block, re.DOTALL)
-                nested_items = [item.strip() for item in nested_items if item.strip()]
-                
-                # Format with proper nested bullet styling
-                nested_bullets = ''
-                if nested_items:
-                    nested_bullets = '\\begin{itemize}[leftmargin=1em,itemsep=0.05em,parsep=0.05em]\n'
-                    for nested_item in nested_items:
-                        nested_bullets += f'\\item {nested_item}\n'
-                    nested_bullets += '\\end{itemize}'
-                
-                escaped_items.append(f'\\textbf{{{comp_title}}} {nested_bullets}')
-            
-        # Replace the Core Competencies section with our custom formatted version
-        # Remove the original header since our LaTeX command will add it
-        modified_content = md_content.replace(
-            competencies_section.group(0),
-            "\\corecompetencies{\n" + 
-            '\n'.join([f"\\item {item}" for item in escaped_items]) + 
-            "\n}\n"
+    temp_md = Path("temp_resume.md")
+    temp_template = Path("temp_template.tex")
+    copied_portrait = None
+    try:
+        temp_md.write_text(modified_content, encoding="utf-8")
+        temp_template.write_text(
+            render_template(
+                author_name,
+                title,
+                format_contact(contact_info),
+                portrait_file.name,
+            ),
+            encoding="utf-8",
         )
-        
-        # Add page break before Professional Experience
-        modified_content = modified_content.replace(
-            "# Professional Experience",
-            "\\pagebreak\n\n# Professional Experience"
+
+        target = Path.cwd() / portrait_file.name
+        if portrait_file.resolve() != target.resolve():
+            shutil.copy(portrait_file, target)
+            copied_portrait = target
+
+        output_file = Path("pdf/resume.pdf")
+        output_file.parent.mkdir(parents=True, exist_ok=True)
+        pypandoc.convert_file(
+            str(temp_md),
+            to="pdf",
+            outputfile=str(output_file),
+            extra_args=[
+                "--pdf-engine=xelatex",
+                f"--template={temp_template}",
+                "--quiet",
+            ],
         )
-        
-        # Write to temporary file
-        temp_md_file.write_text(modified_content, encoding='utf-8')
-    else:
-        # If no Core Competencies section found, just use the original file
-        temp_md_file.write_text(md_content, encoding='utf-8')
-    
-    # Create template for PDF generation
-    template_path = Path("template.tex")
-    template_content = f"""\\documentclass[11pt]{{article}}
-\\usepackage[margin=1in]{{geometry}}
-\\usepackage{{graphicx}}
-\\usepackage{{parskip}}
-\\usepackage{{multicol}}
-\\usepackage{{enumitem}}
-\\usepackage{{hyperref}}
+    finally:
+        if temp_md.exists():
+            temp_md.unlink()
+        if temp_template.exists():
+            temp_template.unlink()
+        if copied_portrait is not None and copied_portrait.exists():
+            copied_portrait.unlink()
 
-% Set default list spacing for all itemize environments
-\\setlist[itemize]{{itemsep=0.3em,parsep=0.15em,topsep=0.3em}}
+    print(f"Resume generated: {output_file.resolve()}")
 
-% Define a command for tightlist since pandoc uses it - allow some spacing for readability
-\\providecommand{{\\tightlist}}{{\\setlength{{\\itemsep}}{{0.4em}}\\setlength{{\\parskip}}{{0.2em}}}}
 
-% Define column environment for core competencies
-\\newenvironment{{competencycolumns}}{{
-  \\begin{{multicols}}{{2}}
-  \\setlength{{\\columnsep}}{{1cm}}
-  \\setlength{{\\columnseprule}}{{0pt}}
-}}{{\\end{{multicols}}}}
+def main(argv):
+    if len(argv) == 3 and argv[1] == "--latest":
+        print(find_latest_resume(Path(argv[2])).as_posix())
+        return 0
+    if len(argv) != 3:
+        print("Usage: python build_resume.py <resume.md> <portrait.jpg>")
+        print("       python build_resume.py --latest <raw-directory>")
+        return 1
+    build_resume(argv[1], argv[2])
+    return 0
 
-% Custom styles for resume sections
-\\usepackage{{titlesec}}
-\\titleformat{{\\section}}{{\\Large\\bfseries}}{{}}{{0em}}{{}}
-\\titlespacing{{\\section}}{{0pt}}{{10pt}}{{5pt}}
-\\titleformat{{\\subsection}}{{\\large\\bfseries}}{{}}{{0em}}{{}}
-\\titlespacing{{\\subsection}}{{0pt}}{{8pt}}{{4pt}}
-
-% Custom command for core competencies section with proper bullet formatting
-\\newcommand{{\\corecompetencies}}[1]{{
-  \\section*{{Core Competencies}}
-  \\begin{{multicols}}{{2}}
-  \\small
-  \\begin{{itemize}}[leftmargin=1em,itemsep=0.3em,parsep=0.15em]
-    #1
-  \\end{{itemize}}
-  \\normalsize
-  \\end{{multicols}}
-}}
-
-\\begin{{document}}
-
-% Header with portrait and contact info
-\\begin{{minipage}}{{0.25\\textwidth}}
-  \\includegraphics[width=\\linewidth]{{{portrait_file.name}}}
-\\end{{minipage}}%
-\\hfill
-\\begin{{minipage}}{{0.7\\textwidth}}
-  \\Large \\textbf{{{author_name}}} \\\\
-  \\normalsize {title} \\\\
-  {contact_info}
-\\end{{minipage}}
-
-\\vspace{{1em}}
-
-$body$
-
-\\end{{document}}
-"""
-    
-    # Check if template exists and has the correct content
-    should_write_template = True
-    if template_path.exists():
-        existing_content = template_path.read_text()
-        if existing_content == template_content:
-            should_write_template = False
-    
-    if should_write_template:
-        template_path.write_text(template_content)
-
-    # Copy portrait to current directory if needed
-    target_path = Path.cwd() / portrait_file.name
-    if portrait_file.resolve() != target_path.resolve():
-        import shutil
-        shutil.copy(portrait_file, target_path)
-
-    # Check if template exists and has the correct content
-    should_write_template = True
-    if template_path.exists():
-        existing_content = template_path.read_text(encoding='utf-8')
-        if existing_content == template_content:
-            should_write_template = False
-    
-    if should_write_template:
-        template_path.write_text(template_content, encoding='utf-8')
-    
-    # Copy portrait to current directory if needed
-    target_path = Path.cwd() / portrait_file.name
-    if portrait_file.resolve() != target_path.resolve():
-        import shutil
-        shutil.copy(portrait_file, target_path)
-    
-    # Replace en spaces (U+2002) with regular spaces to avoid warnings
-    if temp_md_file.exists():
-        content = temp_md_file.read_text(encoding='utf-8')
-        # Replace en space (U+2002) with regular space
-        content = content.replace('\u2002', ' ')
-        temp_md_file.write_text(content, encoding='utf-8')
-    
-    # Generate PDF
-    output_file = Path("pdf/resume.pdf")
-    pypandoc.convert_file(
-        str(temp_md_file),
-        to="pdf",
-        outputfile=str(output_file),
-        extra_args=[
-            "--pdf-engine=xelatex",
-            f"--template={template_path}",
-            "--quiet"  # Suppress MiKTeX update warnings
-        ]
-    )
-    
-    # Clean up temporary file
-    if temp_md_file.exists():
-        temp_md_file.unlink()
-    
-    # Clean up temporary portrait file in current directory
-    if Path(portrait_file.name).exists():
-        Path(portrait_file.name).unlink()
-    
-    print(f"✅ Resume generated: {output_file.resolve()}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python build_resume.py <resume.md> <portrait.jpg>")
-        sys.exit(1)
-    
-    build_resume(sys.argv[1], sys.argv[2])
+    sys.exit(main(sys.argv))
