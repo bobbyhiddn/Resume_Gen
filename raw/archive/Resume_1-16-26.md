@@ -1,1 +1,144 @@
-JSBNaWNhaCBMb25nbWlyZQolIFByb2dyYW0gVGVjaG5pY2FsIExlYWQgLyBBSSAmIEF1dG9tYXRpb24gUHJvZHVjdCBNYW5hZ2VyIOKAoiBSb3ksIFVUIHwgbWxtaWNhaGxvbmdtaXJlQGdtYWlsLmNvbSB8IGdpdGh1Yi5jb20vYm9iYnloaWRkbiB8IGxpbmtlZGluLmNvbS9pbi9taWNhaC1sb25nbWlyZQolIFVwZGF0ZWQ6IDIwMjUtMDEtMTUKCiMgUHJvZmVzc2lvbmFsIFN1bW1hcnkKClByb2dyYW0gVGVjaG5pY2FsIExlYWQgYW5kIEFJICYgQXV0b21hdGlvbiBQcm9kdWN0IE1hbmFnZXIgbGVhZGluZyBtdWx0aS10ZWFtIHByb2dyYW1zIGFjcm9zcyBjbGFzc2lmaWVkIGZlZGVyYWwgZW52aXJvbm1lbnRzLiBJIGJ1aWxkIHNlY3VyZSwgYXV0b21hdGVkIGNsb3VkIHBsYXRmb3JtcyBhbmQgaGlnaC1wZXJmb3JtaW5nIHRlYW1zIGJ5IHRyZWF0aW5nIGNvbXBsZXhpdHkgYXMgc3RydWN0dXJlIHRvIGJlIHVuZGVyc3Rvb2QsIG5vdCBhdm9pZGVkLiBDdXJyZW50bHkgbWFuYWdpbmcgMTArIERldk9wcyB0ZWFtcyB3aGlsZSBzZXJ2aW5nIGFzIHRlY2huaWNhbCBsZWFkIGZvciBBSSBwbGF0Zm9ybSBpbml0aWF0aXZlcyBzcGFubmluZyBBV1MgR292Q2xvdWQsIE5JUFIsIFNJUFIsIEpXSUNTLCBhbmQgU0MgbmV0d29ya3MuIEkgZGVsaXZlciB1bmRlciBpbXBvc3NpYmxlIHRpbWVsaW5lc+KAlGNvbXByZXNzaW5nIDYtbW9udGggcHJvamVjdHMgaW50byA5IHdlZWtz4oCUd2hpbGUgZXN0YWJsaXNoaW5nIHNjYWxhYmxlIGZyYW1ld29ya3MgZm9yIGNvc3Qgb3B0aW1pemF0aW9uLCBzdXBwb3J0IG9wZXJhdGlvbnMsIGFuZCB0ZWFtIGRldmVsb3BtZW50LiBCZXlvbmQgaW5mcmFzdHJ1Y3R1cmUsIEkgYnJpbmcgcHJvZmVzc2lvbmFsLWdyYWRlIG11bHRpbWVkaWEgc2tpbGxzIHRvIGNyYWZ0IGNsZWFyLCBjb21wZWxsaW5nIHRlY2huaWNhbCBjb21tdW5pY2F0aW9ucyBmb3IgUGVudGFnb24tbGV2ZWwgc3Rha2Vob2xkZXJzLgoKIyBDb3JlIENvbXBldGVuY2llcwoKLSAqKklhQyAvIENhQyoqCiAgLSBUZXJyYWZvcm0sIEFuc2libGUKICAtIEFXUyBTU00sIENsb3VkRm9ybWF0aW9uCiAgLSBHaXRMYWIgUnVubmVycywgQXJnbyBDRCwgR2l0SHViIEFjdGlvbnMKCi0gKipDb250YWluZXIgT3JjaGVzdHJhdGlvbioqCiAgLSBLdWJlcm5ldGVzIChFS1MsIG11bHRpLXRlbmFudCkKICAtIERvY2tlciBDb21wb3NlLCBIZWxtCiAgLSBQb2RtYW4KCi0gKipMYW5ndWFnZXMqKgogIC0gUHl0aG9uLCBHbywgSmF2YVNjcmlwdAogIC0gUG93ZXJTaGVsbCwgQmFzaAoKLSAqKkFJL01MIFBsYXRmb3JtcyoqCiAgLSBBV1MgQmVkcm9jayAoQ2xhdWRlLCBUaXRhbikKICAtIFJBRyBhcmNoaXRlY3R1cmVzCiAgLSBNb2RlbCBDb250ZXh0IFByb3RvY29sIChNQ1ApIGludGVncmF0aW9uCiAgLSBBZ2VudGljIE9yY2hlc3RyYXRpb24gU3lzdGVtcwogIC0gRW1iZWRkaW5nLUJhc2VkIENsYXNzaWZpY2F0aW9uCgotICoqU2VjdXJpdHkgJiBDb21wbGlhbmNlKioKICAtIFNUSUcgYXV0b21hdGlvbiwgdnVsbmVyYWJpbGl0eSByZW1lZGlhdGlvbiBwaXBlbGluZXMKICAtIE11bHRpLWNsYXNzaWZpY2F0aW9uIGVudmlyb25tZW50cyAoVS9TL1RTKQogIC0gTGVhc3QtcHJpdmlsZWdlIG5ldHdvcmtpbmcKCi0gKipEb21haW4gQWRtaW5pc3RyYXRpb24qKgogIC0gQWN0aXZlIERpcmVjdG9yeSAmIEdyb3VwIFBvbGljeQogIC0gS2V5Y2xvYWsgU1NPLCBMREFQIEludGVncmF0aW9uCgotICoqVmlydHVhbGl6YXRpb24qKgogIC0gQVdTIEdvdkNsb3VkIChVbmNsYXNzaWZpZWQgJiBUb3AgU2VjcmV0KQogIC0gQXp1cmUsIEdDUCwgVk13YXJlIEhvcml6b24gJiBWeFJhaWwsIEtWTQoKLSAqKlN5c3RlbXMgJiBWaXNpb24qKgogIC0gTXVsdGktdGVhbSBzcHJpbnQgcGxhbm5pbmcsIGluaXRpYXRpdmUgc2V0dGluZywgZ29hbCB0cmFja2luZwogIC0gTWVudG9yaW5nLCBwZXJmb3JtYW5jZSBjb2FjaGluZywgc3Rha2Vob2xkZXIgcmVwb3J0aW5nCiAgLSBUZWNobmljYWwgZG9jdW1lbnRhdGlvbiwgdmlkZW8gcHJvZHVjdGlvbiwgZXhlY3V0aXZlIGRlbW9zCgojIFByb2Zlc3Npb25hbCBFeHBlcmllbmNlCgojIyBQcm9ncmFtIFRlY2huaWNhbCBMZWFkIC8gQUkgJiBBdXRvbWF0aW9uIFByb2R1Y3QgTWFuYWdlcgoKKipBY2NlbnR1cmUgRmVkZXJhbCBTZXJ2aWNlcyoqIOKAkyBSb3ksIFVUIF8oSnVuIDIwMjUg4oCTIFByZXNlbnQpXwoKKipMZWFkZXJzaGlwIFNjYWxlOioqCgotIE1hbmFnaW5nIDEwIERldk9wcyB0ZWFtcyBhY3Jvc3MgaW5mcmFzdHJ1Y3R1cmUsIHBsYXRmb3JtLCBhbmQgc2VjdXJpdHkgZnVuY3Rpb25zIHdpdGhpbiBwcmltYXJ5IHByb2dyYW0KLSBTZXJ2aW5nIGFzIHRlY2huaWNhbCBsZWFkIGZvciBzZWNvbmRhcnkgcHJvZ3JhbSBkcml2aW5nIEFJIHBsYXRmb3JtIGFyY2hpdGVjdHVyZQotIExhdW5jaGluZyAyIGFkZGl0aW9uYWwgcHJvZ3JhbXMgaW4gUTEgMjAyNgotIFNjYWxlZCBmcm9tIDQgdGVhbXMgdG8gMTAgdGVhbXMgaW4gb25lIHllYXIgd2hpbGUgZGVsaXZlcmluZyBvbiA3MiB0cmFja2VkIGluaXRpYXRpdmVzCi0gUHJvZHVjdCBtYW5hZ2VtZW50IGVmZm9ydHMgaGF2ZSBzZWN1cmVkICQzTSBpbiBjb250cmFjdHMgYWNyb3NzIHRoZSBkZWZlbnNlIGluZHVzdHJpYWwgYmFzZQotIEluc3RydW1lbnRhbCBpbiBEb1cgZGVtb25zdHJhdGlvbnMgZm9yIFBlbnRhZ29uIGFuZCBBaXIgRm9yY2Ugc3Rha2Vob2xkZXJzCgoqKkFJIFBsYXRmb3JtIElubm92YXRpb246KioKCi0gQ29yZSBjb250cmlidXRvciB0byBGZWRHZW5pdXMsIEFGUydzIGNsb3VkLWFnbm9zdGljIFJBRyBhbmQgY2hhdCBwbGF0Zm9ybSBvcGVyYXRpb25hbCBpbiBjbGFzc2lmaWVkIGVudmlyb25tZW50cwotIERlcGxveWVkIEFJIGF1dG9tYXRpb24gaW4gQ0kvQ0QgcGlwZWxpbmVzIHZpYSBzZWN1cmUgQmVkcm9jayBlbmRwb2ludHPigJRhIGNhcGFiaWxpdHkgbW9zdCB2ZW5kb3JzIGNhbm5vdCBwcm92aWRlIGluIGNsYXNzaWZpZWQgbmV0d29ya3MKLSBFbmFibGVkIHN0cmF0ZWdpYyBwYXJ0bmVyc2hpcCB3aXRoIElzdGFyaSBEaWdpdGFsIGZvciBNb2RlbCBDb250ZXh0IFByb3RvY29sIGludGVncmF0aW9uLCBlbmFibGluZyBBSS10by1lbmdpbmVlcmluZy1tb2RlbCBjb25uZWN0aXZpdHkKCioqQ29zdCAmIFByb2Nlc3MgT3B0aW1pemF0aW9uOioqCgotIEFjaGlldmVkICQyODVLIHF1YXJ0ZXJseSBzYXZpbmdzIHRocm91Z2ggc3lzdGVtYXRpYyBpZGxlIHJlc291cmNlIG1hbmFnZW1lbnQKLSBCdWlsdCBzdXBwb3J0IFNMQSBmcmFtZXdvcmsgcHJvdGVjdGluZyBlbmdpbmVlcmluZyBjYXBhY2l0eSBmcm9tIHVuc3RydWN0dXJlZCBpbnRlcnJ1cHRzCi0gUm9hZG1hcCBwb3NpdGlvbnMgb3JnYW5pemF0aW9uIGZvciAkMU0gYW5udWFsIHNhdmluZ3MgYnkgZW5kIG9mIEZZMjYKCiMjIFNlbmlvciBEZXZPcHMgRW5naW5lZXIKCioqQWNjZW50dXJlIEZlZGVyYWwgU2VydmljZXMqKiDigJMgUm95LCBVVCBfKEZlYiAyMDIzIOKAkyBKdW4gMjAyNSlfCgoqKk1ham9yIERlbGl2ZXJ5OioqCgotIExlZCBhcmNoaXRlY3R1cmUgYW5kIGRlbGl2ZXJ5IG9mIGFuIEFpciBGb3JjZSBwcm9ncmFt4oCUY29tcHJlc3NpbmcgYSA2LW1vbnRoIHNjb3BlIGludG8gOSB3ZWVrcyB0aHJvdWdoIHByb2dyYW0gbGVhZGVyc2hpcAotIERlcGxveWVkIG9wZXJhdGlvbmFsIGNsb3VkIGVudmlyb25tZW50cyBhY3Jvc3MgVW5jbGFzc2lmaWVkIGFuZCBUb3AgU2VjcmV0IEdvdkNsb3VkOiAxMCBBV1MgYWNjb3VudHMsIFRyYW5zaXQgR2F0ZXdheSByb3V0aW5nLCBWUENzLCBkb21haW4gY29udHJvbGxlcnMsIGNlcnRpZmljYXRlIGF1dGhvcml0aWVzLCBKV0lDUyBXb3Jrc3BhY2UgYWNjZXNzCi0gUGxhdGZvcm0gc2VydmljZXMgaW5jbHVkZWQ6IEdpdExhYiwgS2V5Y2xvYWssIFZhdWx0LCBKaXJhLCBDb25mbHVlbmNlLCBTcGx1bmssIE5lc3N1cwoKKipFbnRlcnByaXNlIElhQzoqKgoKLSBCdWlsdCBlbnRlcnByaXNlIElhQyBmcmFtZXdvcmsgYWRvcHRlZCBhY3Jvc3MgbXVsdGlwbGUgcHJvZHVjdCBhbmQgb3BlcmF0aW9ucyB0ZWFtczsgcmVkdWNlZCBpbmZyYXN0cnVjdHVyZSBkZXBsb3ltZW50IHRpbWUgZnJvbSB3ZWVrcyB0byBob3VycwotIEF1dG9tYXRlZCBPUyB1cGdyYWRlcyBhbmQgaGFyZGVuaW5nIGFjcm9zcyBtdWx0aS1lbnZpcm9ubWVudCBmbGVldCwgZWxpbWluYXRpbmcgd2Vla3Mgb2YgbWFudWFsIGVmZm9ydCBhbmQgcmFpc2luZyBjb21wbGlhbmNlIHNjb3JlcwoKIyMgRGV2T3BzIEVuZ2luZWVyCgoqKk5vcnRocm9wIEdydW1tYW4qKiDigJMgUm95LCBVVCBfKE9jdCAyMDIyIOKAkyBGZWIgMjAyMylfCgotIEludHJvZHVjZWQgSW5mcmFzdHJ1Y3R1cmUtYXMtQ29kZSB0byBhIG5ldyBWREkgcGxhdGZvcm0sIGVuYWJsaW5nIGNvbnNpc3RlbnQgbXVsdGktc2l0ZSByb2xsb3V0cwotIEF1dGhvcmVkIFB5dGhvbiBhdXRvbWF0aW9uIGludGVncmF0aW5nIHdpdGggaW50ZXJuYWwgQVBJcywgaGFsdmluZyBtYW51YWwgbWFpbnRlbmFuY2UgdGltZQotIERlbGl2ZXJlZCBleGVjdXRpdmUtbGV2ZWwgZGVtb3MgYW5kIGtub3dsZWRnZSB0cmFuc2ZlcnMsIHNldHRpbmcgdGhlIHN0YW5kYXJkIGZvciBmb2xsb3ctb24gRGV2T3BzIHByb2plY3RzCgojIyBTeXN0ZW1zIEVuZ2luZWVyCgoqKk5vcnRocm9wIEdydW1tYW4qKiDigJMgUm95LCBVVCBfKEZlYiAyMDIyIOKAkyBPY3QgMjAyMilfCgotIFNhdmVkIHRoZSBwcm9ncmFtIHNpZ25pZmljYW50IGNvbnN1bHRpbmcgY29zdHMgYnkgdGFraW5nIG9uIGxhcmdlIHByb2plY3RzIGFuZCBkb2N1bWVudGluZyB0aGUgZGVwbG95bWVudCBwcm9jZXNzCi0gTGVkIGltcGxlbWVudGF0aW9uIG9mIG1pc3Npb24tY3JpdGljYWwgcHJvamVjdHM6IElCTSBKYXp6IHN1aXRlLCBWTXdhcmUgSG9yaXpvbiA4IFZESSBpbmZyYXN0cnVjdHVyZSwgVk13YXJlIFZ4UmFpbCBkYXRhY2VudGVyIHN0YW5kdXAKCiMjIENvbXB1dGVyIFN5c3RlbXMgQW5hbHlzdAoKKipOb3J0aHJvcCBHcnVtbWFuKiog4oCTIFJveSwgVVQgXygyMDIwIOKAkyAyMDIyKV8KCi0gU3VwcG9ydGVkIGxhcmdlLXNjYWxlIGRpc2FzdGVyLXJlY292ZXJ5IGVmZm9ydHMsIHZpcnR1YWxpemluZyBjcml0aWNhbCB3b3JrbG9hZHMgYW5kIHJlc3RvcmluZyBzZXJ2aWNlcyBhaGVhZCBvZiBzY2hlZHVsZQotIFNlcnZlZCBhcyBwcmltYXJ5IGFkbWluIGZvciBhIHNlY3VyZSBWREkgZXN0YXRlLCB0dW5pbmcgcG9saWNpZXMgYW5kIG9wdGltaXppbmcgcGVyZm9ybWFuY2UKCiMjIElUIFN1cHBvcnQgVGVjaG5pY2lhbiBJSUkKCioqTm9ydGhyb3AgR3J1bW1hbioqIOKAkyBSb3ksIFVUIF8oMjAxOCDigJMgMjAyMClfCgotIFBhY2thZ2VkLCB0ZXN0ZWQsIGFuZCBkZXBsb3llZCBzb2Z0d2FyZSB0byBjbGFzc2lmaWVkIGNsaWVudCBzeXN0ZW1zOyBtYWludGFpbmVkIG91dGFnZSBhbmQgcmVjb3ZlcnkgcnVuYm9va3MKCiMjIE1hc3MgQ29tbXVuaWNhdGlvbnMgU3BlY2lhbGlzdCDigJQgNDZTCgoqKkFybXkgTmF0aW9uYWwgR3VhcmQqKiDigJMgSmFja3NvbiwgTVMgXygyMDE2IOKAkyAyMDIxKV8KCi0gUHJvZHVjZWQgbXVsdGltZWRpYSBjb250ZW50IGZvciBuYXRpb253aWRlIGRpc3RyaWJ1dGlvbjsgaW50ZXJ2aWV3ZWQgc2VuaW9yIG1pbGl0YXJ5IGFuZCBzdGF0ZSBsZWFkZXJzaGlwCi0gTGVkIHZpZGVvIHByb2R1Y3Rpb24gZnJvbSBzY3JpcHRpbmcgdG8gZWRpdGluZyBmb3IgcHVibGljIGFmZmFpcnMsIHRyYWluaW5nLCBhbmQgZXhlY3V0aXZlIGNvbW11bmljYXRpb24KCiMgQ2VydGlmaWNhdGlvbnMKCi0gVG9wLVNlY3JldCBTZWN1cml0eSBDbGVhcmFuY2UgLSBTQ0kgKEFjdGl2ZSkKLSBTZWN1cml0eSsg4oCTIENvbXBUSUEgKDIwMTkg4oCTIDIwMjkpCi0gSVRJTCB2NCBGb3VuZGF0aW9ucyDigJMgQVhFTE9TICgyMDE5KQoKIyBFZHVjYXRpb24KCi0gRGVmZW5zZSBJbmZvcm1hdGlvbiBTY2hvb2wsIEZvcnQgTWVhZGUgTUQg4oCUIE1PUyBDZXJ0aWZpY2F0aW9uICgyMDE4KQotIFZhbmNsZWF2ZSBIaWdoIFNjaG9vbCwgVmFuY2xlYXZlIE1TIOKAlCBEaXBsb21hICgyMDEzKQoKIyBSZWZlcmVuY2VzCgpBdmFpbGFibGUgdXBvbiByZXF1ZXN0LgoKLS0tCgpbVmlldyB0aGlzIHJlc3VtZSBvbmxpbmVdKGh0dHBzOi8vYm9iYnloaWRkbi5naXRodWIuaW8vUmVzdW1lX0dlbikK
+% Micah Longmire
+% Program Technical Lead / AI & Automation Product Manager • Roy, UT | mlmicahlongmire@gmail.com | github.com/bobbyhiddn | linkedin.com/in/micah-longmire
+% Updated: 2025-01-15
+
+# Professional Summary
+
+Program Technical Lead and AI & Automation Product Manager leading multi-team programs across classified federal environments. I build secure, automated cloud platforms and high-performing teams by treating complexity as structure to be understood, not avoided. Currently managing 10+ DevOps teams while serving as technical lead for AI platform initiatives spanning AWS GovCloud, NIPR, SIPR, JWICS, and SC networks. I deliver under impossible timelines—compressing 6-month projects into 9 weeks—while establishing scalable frameworks for cost optimization, support operations, and team development. Beyond infrastructure, I bring professional-grade multimedia skills to craft clear, compelling technical communications for Pentagon-level stakeholders.
+
+# Core Competencies
+
+- **IaC / CaC**
+  - Terraform, Ansible
+  - AWS SSM, CloudFormation
+  - GitLab Runners, Argo CD, GitHub Actions
+
+- **Container Orchestration**
+  - Kubernetes (EKS, multi-tenant)
+  - Docker Compose, Helm
+  - Podman
+
+- **Languages**
+  - Python, Go, JavaScript
+  - PowerShell, Bash
+
+- **AI/ML Platforms**
+  - AWS Bedrock (Claude, Titan)
+  - RAG architectures
+  - Model Context Protocol (MCP) integration
+  - Agentic Orchestration Systems
+  - Embedding-Based Classification
+
+- **Security & Compliance**
+  - STIG automation, vulnerability remediation pipelines
+  - Multi-classification environments (U/S/TS)
+  - Least-privilege networking
+
+- **Domain Administration**
+  - Active Directory & Group Policy
+  - Keycloak SSO, LDAP Integration
+
+- **Virtualization**
+  - AWS GovCloud (Unclassified & Top Secret)
+  - Azure, GCP, VMware Horizon & VxRail, KVM
+
+- **Systems & Vision**
+  - Multi-team sprint planning, initiative setting, goal tracking
+  - Mentoring, performance coaching, stakeholder reporting
+  - Technical documentation, video production, executive demos
+
+# Professional Experience
+
+## Program Technical Lead / AI & Automation Product Manager
+
+**Accenture Federal Services** – Roy, UT _(Jun 2025 – Present)_
+
+**Leadership Scale:**
+
+- Managing 10 DevOps teams across infrastructure, platform, and security functions within primary program
+- Serving as technical lead for secondary program driving AI platform architecture
+- Launching 2 additional programs in Q1 2026
+- Scaled from 4 teams to 10 teams in one year while delivering on 72 tracked initiatives
+- Product management efforts have secured $3M in contracts across the defense industrial base
+- Instrumental in DoW demonstrations for Pentagon and Air Force stakeholders
+
+**AI Platform Innovation:**
+
+- Core contributor to FedGenius, AFS's cloud-agnostic RAG and chat platform operational in classified environments
+- Deployed AI automation in CI/CD pipelines via secure Bedrock endpoints—a capability most vendors cannot provide in classified networks
+- Enabled strategic partnership with Istari Digital for Model Context Protocol integration, enabling AI-to-engineering-model connectivity
+
+**Cost & Process Optimization:**
+
+- Achieved $285K quarterly savings through systematic idle resource management
+- Built support SLA framework protecting engineering capacity from unstructured interrupts
+- Roadmap positions organization for $1M annual savings by end of FY26
+
+## Senior DevOps Engineer
+
+**Accenture Federal Services** – Roy, UT _(Feb 2023 – Jun 2025)_
+
+**Major Delivery:**
+
+- Led architecture and delivery of an Air Force program—compressing a 6-month scope into 9 weeks through program leadership
+- Deployed operational cloud environments across Unclassified and Top Secret GovCloud: 10 AWS accounts, Transit Gateway routing, VPCs, domain controllers, certificate authorities, JWICS Workspace access
+- Platform services included: GitLab, Keycloak, Vault, Jira, Confluence, Splunk, Nessus
+
+**Enterprise IaC:**
+
+- Built enterprise IaC framework adopted across multiple product and operations teams; reduced infrastructure deployment time from weeks to hours
+- Automated OS upgrades and hardening across multi-environment fleet, eliminating weeks of manual effort and raising compliance scores
+
+## DevOps Engineer
+
+**Northrop Grumman** – Roy, UT _(Oct 2022 – Feb 2023)_
+
+- Introduced Infrastructure-as-Code to a new VDI platform, enabling consistent multi-site rollouts
+- Authored Python automation integrating with internal APIs, halving manual maintenance time
+- Delivered executive-level demos and knowledge transfers, setting the standard for follow-on DevOps projects
+
+## Systems Engineer
+
+**Northrop Grumman** – Roy, UT _(Feb 2022 – Oct 2022)_
+
+- Saved the program significant consulting costs by taking on large projects and documenting the deployment process
+- Led implementation of mission-critical projects: IBM Jazz suite, VMware Horizon 8 VDI infrastructure, VMware VxRail datacenter standup
+
+## Computer Systems Analyst
+
+**Northrop Grumman** – Roy, UT _(2020 – 2022)_
+
+- Supported large-scale disaster-recovery efforts, virtualizing critical workloads and restoring services ahead of schedule
+- Served as primary admin for a secure VDI estate, tuning policies and optimizing performance
+
+## IT Support Technician III
+
+**Northrop Grumman** – Roy, UT _(2018 – 2020)_
+
+- Packaged, tested, and deployed software to classified client systems; maintained outage and recovery runbooks
+
+## Mass Communications Specialist — 46S
+
+**Army National Guard** – Jackson, MS _(2016 – 2021)_
+
+- Produced multimedia content for nationwide distribution; interviewed senior military and state leadership
+- Led video production from scripting to editing for public affairs, training, and executive communication
+
+# Certifications
+
+- Top-Secret Security Clearance - SCI (Active)
+- Security+ – CompTIA (2019 – 2029)
+- ITIL v4 Foundations – AXELOS (2019)
+
+# Education
+
+- Defense Information School, Fort Meade MD — MOS Certification (2018)
+- Vancleave High School, Vancleave MS — Diploma (2013)
+
+# References
+
+Available upon request.
+
+---
+
+[View this resume online](https://bobbyhiddn.github.io/Resume_Gen)
