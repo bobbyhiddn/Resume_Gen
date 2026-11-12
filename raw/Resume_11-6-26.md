@@ -4,20 +4,20 @@
 
 # Professional Summary
 
-Classified AI Lead for the Mission Systems sector and agent systems architect. I set the sector's AI strategy and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is agentic engineering at production scale, paired with cloud architecture and rapid automation of infrastructure and configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, 72 tracked initiatives, and capture strategy work on sole-source awards totaling more than $100M.
+Classified AI Lead for the Mission Systems sector and agent systems architect. I set the sector's AI strategy and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is systems engineering at production scale, paired with cloud architecture and rapid automation of infrastructure via configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, tracked initiatives over roadmaps, and capture strategy work on sole-source awards totaling more than $100M.
 
 # Core Competencies
 
 - **Agentic Engineering**
   - Persistent agent frameworks
-  - Agent harness engineering
+  - Harness engineering
   - Multi-agent orchestration systems
   - Agent evaluation and benchmarking
   - Model Context Protocol (MCP) integration
 
 - **Cloud Architecture & Automation**
-  - AWS GovCloud (Unclassified & Top Secret)
-  - Rapid IaC / CaC automation: Terraform, Ansible
+  - AWS GovCloud (Unclassified, Secret & Top Secret)
+  - Rapid IaC / CaC automation: Terraform, Ansible, Packer
   - AWS SSM, CloudFormation
   - Kubernetes (EKS, multi-tenant), Docker, Helm, Podman
   - GitLab Runners, Argo CD, GitHub Actions
@@ -28,9 +28,9 @@ Classified AI Lead for the Mission Systems sector and agent systems architect. I
   - PowerShell, Bash
 
 - **AI/ML Platforms**
-  - AWS Bedrock (Claude, Titan)
+  - AWS Bedrock (Anthropic, OpenAI, Titan)
   - RAG architectures
-  - Embedding-Based Classification
+  - Embedding-Driven Classification
 
 - **Security & Compliance**
   - STIG automation, vulnerability remediation pipelines
