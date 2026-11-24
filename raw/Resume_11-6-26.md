@@ -4,7 +4,7 @@
 
 # Professional Summary
 
-Classified AI Lead for the Mission Systems sector and agent systems architect. I set the sector's AI strategy and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is systems engineering at production scale, paired with cloud architecture and rapid automation of infrastructure via configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, tracked initiatives over roadmaps, and capture strategy work on sole-source awards totaling more than $100M.
+Classified AI Lead for the Secure Cloud Platforms sector and agent systems architect. I set the sector's AI strategy and lead the engineering of an emergent persistent agent framework, built and maintained with a team of engineers for classified cloud programs. My core craft is systems engineering at production scale, paired with cloud architecture and rapid automation of infrastructure via configuration as code. My strategic value is customer facing: I whiteboard abstract architectures with stakeholders in the room, then carry those designs to delivery over aggressive timelines. Record includes 10+ DevOps and platform teams, tracked initiatives over roadmaps, and capture strategy work on sole-source awards totaling more than $100M.
 
 # Core Competencies
 
@@ -54,13 +54,13 @@ Classified AI Lead for the Mission Systems sector and agent systems architect. I
 
 # Professional Experience
 
-## Classified AI Lead for the Mission Systems Sector
+## Classified AI Lead
 
 **Accenture Federal Services** – Chattanooga, TN _(Jul 2026 – Present)_
 
 **Strategy & Leadership:**
 
-- Lead AI strategy for the Mission Systems sector: priorities, roadmap, and platform direction across classified cloud programs
+- Lead AI strategy for the Secure Cloud Platforms sector: priorities, roadmap, and platform direction across classified cloud programs
 - Key contributor to capture strategy supporting sole-source contract awards totaling more than $100M
 - Customer-facing architecture lead: whiteboard abstract architectures with stakeholders and carry them to delivery on aggressive timelines
 
